@@ -1,12 +1,12 @@
 ---
 name: ironman
-description: "This skill should be used when building complete production-grade applications requiring full-stack development, Docker/container orchestration, network engineering, and security hardening — all in one unified workflow. Activate when a project needs backend APIs, frontend UIs, Docker deployments, networking config, and security best practices together."
+description: "Ironman — AI skill untuk seluruh lifecycle engineering: brainstorming arsitektur, fullstack dev, Docker, multi-vendor networking (Cisco/MikroTik/Juniper/Fortinet/Palo Alto/Huawei), network automation, monitoring, dan security hardening — semua dalam satu workflow."
 category: bundled
 risk: safe
 source: custom
-tags: "[fullstack, docker, network, security, devops, backend, frontend, api, database, authentication, network-automation, multi-vendor, cisco, mikrotik, juniper, fortinet, palo-alto, monitoring, wireshark, netmiko, ansible, agnostic]"
+tags: "[brainstorming, architecture, fullstack, docker, network, security, devops, backend, frontend, api, database, authentication, network-automation, multi-vendor, cisco, mikrotik, juniper, fortinet, palo-alto, monitoring, wireshark, netmiko, ansible, agnostic]"
 date_added: "2026-03-20"
-version: "3.0.0"
+version: "3.1.0"
 ---
 
 # 🦾 Ironman — Fullstack DevOps Security Engineer + Network Edition
@@ -33,6 +33,7 @@ version: "3.0.0"
 
 | Kata kunci dalam permintaan | Domain aktif |
 |---|---|
+| `brainstorm`, `ideasi`, `rancang`, `arsitektur`, `pilih teknologi`, `desain sistem`, `mana yang lebih baik`, `apa solusi terbaik` | 🧠 Brainstorming |
 | `build`, `API`, `component`, `endpoint`, `UI` | Full-Stack Dev |
 | `docker`, `dockerfile`, `compose`, `container` | Docker |
 | `cisco`, `mikrotik`, `juniper`, `huawei`, `fortinet`, `palo alto`, `switch`, `router`, `firewall` | Network Multi-Vendor |
@@ -41,6 +42,70 @@ version: "3.0.0"
 | `wireshark`, `tcpdump`, `scapy`, `packet`, `intrusion`, `ids` | Network Security |
 | `jwt`, `auth`, `owasp`, `vulnerability`, `audit`, `hardening` | App Security |
 | `ci/cd`, `pipeline`, `deploy`, `github actions` | CI/CD |
+
+---
+
+## 0️⃣ Brainstorming Mode
+
+> Aktif saat user ingin **ideasi, merancang arsitektur, memilih teknologi, atau mengevaluasi opsi** sebelum eksekusi.
+
+### Framework Brainstorming
+
+#### 1. Architecture Decision
+```
+[KONTEKS]  → Apa yang ingin dibangun? Skala berapa? Tim berapa orang?
+[TRADE-OFF] → Bandingkan 2-3 opsi dengan kelebihan/kekurangan spesifik
+[REKOMENDASI] → Pilih 1 opsi terbaik + alasan konkret
+[NEXT STEP] → Langkah pertama yang bisa dikerjakan sekarang
+```
+
+**Trigger:** *"Mana yang lebih baik antara X dan Y?"*, *"Bagaimana arsitektur terbaik untuk..."*, *"Apa stack yang cocok untuk..."*
+
+#### 2. Network Design Thinking
+```
+[TOPOLOGI]   → Berapa site? Bandwidth? Redundancy requirement?
+[SEGMENTASI] → VLAN/Zone plan: server, user, IoT, management, DMZ
+[ROUTING]    → Static vs OSPF vs BGP — pilih berdasarkan skala
+[VENDOR FIT] → Cisco (enterprise), MikroTik (SMB/ISP), Palo Alto (security-first)
+[HA PLAN]    → VRRP/HSRP, dual-uplink, failover strategy
+```
+
+**Trigger:** *"Desain topologi jaringan untuk..."*, *"Pilih vendor mana yang cocok"*, *"Bagaimana segmentasi VLAN yang tepat"*
+
+#### 3. Tech Stack Evaluation
+```
+| Kriteria          | Opsi A | Opsi B | Opsi C |
+|-------------------|--------|--------|--------|
+| Performa          |        |        |        |
+| Learning curve    |        |        |        |
+| Ecosystem         |        |        |        |
+| Production-ready  |        |        |        |
+| Biaya (infra/OSS) |        |        |        |
+→ Winner: [pilihan] karena [alasan spesifik ke konteks user]
+```
+
+**Trigger:** *"Pilih database mana"*, *"Framework apa yang cocok"*, *"Pakai Ansible atau Netmiko?"*
+
+#### 4. Problem Decomposition
+```
+[ROOT CAUSE]  → Apa masalah sebenarnya? (5 Whys jika perlu)
+[SCOPE]       → Apa yang in-scope vs out-of-scope?
+[MILESTONE]   → Pecah jadi 3-5 langkah yang bisa dieksekusi
+[RISK]        → Apa yang bisa salah? Mitigasi?
+[QUICK WIN]   → Apa yang bisa dikerjakan dalam 1 jam pertama?
+```
+
+**Trigger:** *"Saya tidak tahu harus mulai dari mana"*, *"Bantu saya rencanakan..."*, *"Breakdown masalah ini"*
+
+### Aturan Brainstorming
+```
+✅ Selalu tanya konteks spesifik sebelum merekomendasikan
+✅ Berikan 2-3 opsi konkret, bukan jawaban generik
+✅ Sertakan trade-off nyata (bukan hanya kelebihan)
+✅ Akhiri dengan rekomendasi 1 pilihan terbaik + alasan
+✅ Tawarkan untuk langsung lanjut ke implementasi setelah brainstorm
+❌ Jangan rekomendasikan teknologi yang tidak relevan dengan domain skill ini
+```
 
 ---
 
@@ -708,14 +773,15 @@ ip route show                        # Linux routing
 ## 🔄 Full Workflow
 
 ```
-1. DESIGN    → Architecture, entities, API contracts, network topology
-2. CODE      → Backend + Frontend + DB migrations (any language)
-3. CONTAINER → Multi-stage Dockerfile + Compose (lightweight/Alpine)
-4. NETWORK   → Nginx SSL proxy + segmentation + multi-vendor config
-5. AUTOMATE  → Netmiko/NAPALM/Ansible scripts untuk network tasks
-6. MONITOR   → nmap + SNMP + Prometheus + Grafana dashboard
-7. SECURE    → OWASP checklist + container hardening + dependency scan
-8. DEPLOY    → CI/CD pipeline: test → scan → build → push → deploy
+0. BRAINSTORM → Ideasi arsitektur, evaluasi stack, desain topologi, problem decomp
+1. DESIGN     → Architecture, entities, API contracts, network topology
+2. CODE       → Backend + Frontend + DB migrations (any language)
+3. CONTAINER  → Multi-stage Dockerfile + Compose (lightweight/Alpine)
+4. NETWORK    → Nginx SSL proxy + segmentation + multi-vendor config
+5. AUTOMATE   → Netmiko/NAPALM/Ansible scripts untuk network tasks
+6. MONITOR    → nmap + SNMP + Prometheus + Grafana dashboard
+7. SECURE     → OWASP checklist + container hardening + dependency scan
+8. DEPLOY     → CI/CD pipeline: test → scan → build → push → deploy
 ```
 
 ---
@@ -723,4 +789,4 @@ ip route show                        # Linux routing
 ## When to Use This Skill
 
 Panggil skill ini untuk **apapun** yang berkaitan dengan:
-building apps, Docker, network configuration (multi-vendor), network automation, packet analysis, monitoring, security audit, atau CI/CD — satu skill untuk seluruh lifecycle development dan network engineering.
+brainstorming arsitektur, ideasi teknologi, building apps, Docker, network configuration (multi-vendor), network automation, packet analysis, monitoring, security audit, atau CI/CD — **satu skill untuk seluruh lifecycle: dari ideasi sampai deploy.**

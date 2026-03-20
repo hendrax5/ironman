@@ -1,7 +1,7 @@
 {
   "name": "ironman-skill",
-  "version": "3.0.0",
-  "description": "🦾 Ironman — AI Skill for Network Engineers. Fullstack + Docker + Multi-Vendor Network + Automation + Security.",
+  "version": "3.1.0",
+  "description": "🦾 Ironman — AI Skill: brainstorming arsitektur, fullstack dev, Docker, multi-vendor networking, automation, monitoring & security.",
   "bin": {
     "ironman-skill": "./bin/install.js"
   },
