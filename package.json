@@ -1,0 +1,25 @@
+{
+  "name": "ironman-skill",
+  "version": "3.0.0",
+  "description": "🦾 Ironman — AI Skill for Network Engineers. Fullstack + Docker + Multi-Vendor Network + Automation + Security.",
+  "bin": {
+    "ironman-skill": "./bin/install.js"
+  },
+  "scripts": {
+    "postinstall": "node bin/install.js"
+  },
+  "keywords": [
+    "ai-skill", "network-engineer", "cisco", "mikrotik", "juniper",
+    "fortinet", "palo-alto", "netmiko", "ansible", "docker",
+    "fullstack", "security", "antigravity", "claude-code"
+  ],
+  "author": "hendrax5",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hendrax5/ironman.git"
+  },
+  "homepage": "https://github.com/hendrax5/ironman#readme",
+  "engines": { "node": ">=16" },
+  "files": ["SKILL.md", "README.md", "bin/"]
+}
