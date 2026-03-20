@@ -1,7 +1,7 @@
 {
   "name": "ironman-skill",
-  "version": "3.1.0",
-  "description": "🦾 Ironman — AI Skill: brainstorming arsitektur, fullstack dev, Docker, multi-vendor networking, automation, monitoring & security.",
+  "version": "4.0.0",
+  "description": "🦾 Ironman v4.0 — AI Skill: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, full observability (OTel/Tempo/Loki), event-driven architecture, streaming telemetry, network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation), dan security hardening.",
   "bin": {
     "ironman-skill": "./bin/install.js"
   },
@@ -11,7 +11,14 @@
   "keywords": [
     "ai-skill", "network-engineer", "cisco", "mikrotik", "juniper",
     "fortinet", "palo-alto", "netmiko", "ansible", "docker",
-    "fullstack", "security", "antigravity", "claude-code"
+    "kubernetes", "helm", "istio", "service-mesh",
+    "saas", "tenant-isolation", "rbac", "billing", "stripe",
+    "opentelemetry", "tracing", "loki", "observability",
+    "kafka", "nats", "event-driven", "cloudevents",
+    "gnmi", "streaming-telemetry", "correlation-engine",
+    "ddos", "bgp-flowspec", "rtbh", "auto-remediation",
+    "intent-based-networking", "fullstack", "security",
+    "antigravity", "claude-code"
   ],
   "author": "hendrax5",
   "license": "MIT",

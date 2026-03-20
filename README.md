@@ -1,9 +1,9 @@
-# 🦾 Ironman — AI Skill: Fullstack DevOps Security Engineer + Network Edition
+# 🦾 Ironman v4.0 — AI Skill: Fullstack · DevOps · Network Intelligence Platform
 
-> **1 skill. Semua domain. Dari ideasi sampai deploy.**  
-> Brainstorming arsitektur → fullstack dev → Docker → multi-vendor networking → automation → monitoring → security hardening — semua dalam satu workflow.
+> **1 skill. 14 domain. Zero switching.**  
+> Brainstorming → fullstack dev → Docker → Kubernetes → SaaS platform → full observability → event-driven → network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation) — semua dalam satu workflow.
 
-[![Version](https://img.shields.io/badge/version-3.1.0-blue)](https://github.com/hendrax5/ironman)
+[![Version](https://img.shields.io/badge/version-4.0.0-blue)](https://github.com/hendrax5/ironman)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -32,93 +32,91 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 
 | # | Domain | Cakupan |
 |---|---------|---------|
-| 0 | 🧠 **Brainstorming** | Architecture decision, network design, tech stack eval, problem decomposition |
-| 1 | 🖥️ **Full-Stack Dev** | Python, Node.js, Go, REST API, Database — language agnostic |
-| 2 | 🐳 **Docker & Containers** | Multi-stage build, Alpine, non-root, resource limits |
-| 3 | 🌐 **Network Multi-Vendor** | **Cisco · MikroTik · Juniper · Huawei · Palo Alto · Fortinet** |
-| 4 | 🤖 **Network Automation** | Netmiko, NAPALM, Ansible, Scapy, parallel SSH |
-| 5 | 🔍 **Network Monitoring** | nmap, SNMP, NetFlow, Prometheus, Grafana |
-| 6 | 🛡️ **Network Security** | tcpdump, Wireshark/tshark, firewall automation, IDS/IPS |
-| 7 | 🔐 **App Security** | OWASP Top 10, security by default, dependency audit |
-| 8 | 🚀 **CI/CD Pipeline** | GitHub Actions: test → scan → build → deploy |
+| 0 | 🧠 Brainstorming | Architecture decision, tech evaluation, network design thinking |
+| 1 | 🖥️ Full-Stack Dev | Backend + Frontend + API + DB — any language |
+| 2 | 🐳 Docker & Containers | Dockerfile, Compose, multi-stage, security hardening |
+| 3 | 🌐 Network Multi-Vendor | Cisco, MikroTik, Juniper, Huawei, Palo Alto, Fortinet |
+| 4 | 🤖 Network Automation | Python, Netmiko, NAPALM, Ansible, Scapy |
+| 5 | 🔍 Network Monitoring | nmap, SNMP, NetFlow, Prometheus, Grafana |
+| 6 | 🛡️ Network Security | Wireshark, tcpdump, firewall automation, IDS/IPS |
+| 7 | 🔐 App Security | OWASP, auth, JWT, hardening, dependency audit |
+| 8 | 🚀 CI/CD & Deploy | GitHub Actions, test gates, zero-downtime deploy |
+| 9 | 🏗️ **SaaS Platform** | Tenant isolation, RBAC advanced (CASL/OPA), billing (Stripe), data engineering |
+| 10 | 📡 **Full Observability** | OTel SDK, Tempo/Jaeger, Loki, live network map, alarm P1-P4, drill-down |
+| 11 | ☸️ **Kubernetes & Scaling** | K8s manifests, HPA, PDB, Helm, Istio/Linkerd service mesh |
+| 12 | 📨 **Event-Driven Arch** | Kafka, NATS JetStream, CloudEvents, event sourcing, DLQ |
+| 13 | 🧠 **Network Intelligence** | gNMI streaming, correlation engine, NetFlow anomaly, DDoS detection, BGP Flowspec, RTBH, auto-remediation engine, Intent-Based Networking |
 
 ---
 
-## 🧠 Brainstorming Mode (NEW in v3.1.0)
-
-Aktif otomatis saat kamu mengatakan:
-
-```
-"Mana yang lebih baik antara X dan Y?"
-"Desain topologi jaringan untuk..."
-"Apa stack yang cocok untuk use case ini?"
-"Saya tidak tahu harus mulai dari mana"
-"Pilih vendor mana yang cocok?"
-"Bantu saya rencanakan arsitektur..."
-```
-
-**4 Framework tersedia:**
-
-| Framework | Deskripsi |
-|-----------|-----------|
-| 🏗️ Architecture Decision | Konteks → Trade-off → Rekomendasi → Next step |
-| 🌐 Network Design Thinking | Topologi, segmentasi VLAN, routing, vendor fit, HA |
-| 📊 Tech Stack Evaluation | Tabel perbandingan multi-kriteria + winner |
-| 🔍 Problem Decomposition | Root cause, scope, milestone, risk, quick win |
-
----
-
-## 💡 Contoh Penggunaan
+## 🚀 Usage Examples
 
 ```
 # Brainstorming
-"Saya ingin build monitoring jaringan, mana yang lebih baik: PRTG, Zabbix, atau Prometheus+Grafana?"
-"Desain topologi untuk kantor 3 lantai dengan server room terpisah"
-"Pakai Ansible atau Netmiko untuk automasi 50 router Cisco?"
+"Brainstorm arsitektur untuk SaaS monitoring platform dengan 500 tenant"
 
-# Network Automation
-"Backup config semua router Cisco pakai Netmiko"
-"Buat Ansible playbook untuk deploy VLAN ke semua switch"
+# SaaS Platform
+"Buatkan tenant isolation dengan Row-Level Security di PostgreSQL"
+"Setup Stripe subscription dengan usage-based metering"
 
-# Fullstack + Docker
-"Buat REST API Python + Dockerfile Alpine + docker-compose dengan PostgreSQL"
-"Setup CI/CD GitHub Actions dengan trivy scan sebelum deploy"
+# Observability
+"Setup OpenTelemetry SDK di FastAPI + forward ke Tempo dan Loki"
+"Buat alarm routing P1-P4 di Alertmanager"
+"Buat live network topology map dengan WebSocket + D3.js"
 
-# Network Security
-"Buat script Python untuk monitor traffic mencurigakan pakai Scapy"
-"Setup Prometheus + Grafana untuk monitoring SNMP jaringan saya"
+# Kubernetes
+"Buat K8s deployment manifest production-ready dengan HPA dan PDB"
+"Setup Istio canary deployment 10%/90%"
+
+# EDA
+"Rancang Kafka topic topology untuk telemetry pipeline 100k events/sec"
+
+# Network Intelligence
+"Tulis gNMI subscriber untuk Cisco IOS-XR"
+"Buat correlation engine: interface down + BGP drop → auto-remediate"
+"Implementasi DDoS detector SYN flood + trigger RTBH via ExaBGP"
+"Buat Auto Remediation engine: detect → decide → execute → verify"
+"Compile intent YAML isolate-host ke Cisco CLI via IBN Engine"
 ```
 
 ---
 
-## 📋 Full Workflow
+## 🧩 Platform Intelligence Layers
 
 ```
-0. BRAINSTORM → Ideasi arsitektur, evaluasi stack, desain topologi, problem decomp
-1. DESIGN     → Architecture, entities, API contracts, network topology
-2. CODE       → Backend + Frontend + DB migrations (any language)
-3. CONTAINER  → Multi-stage Dockerfile + Compose (Alpine/lightweight)
-4. NETWORK    → Multi-vendor config + segmentation + Nginx SSL proxy
-5. AUTOMATE   → Netmiko/NAPALM/Ansible scripts untuk network tasks
-6. MONITOR    → nmap + SNMP + Prometheus + Grafana dashboard
-7. SECURE     → OWASP checklist + container hardening + dependency scan
-8. DEPLOY     → CI/CD: test → scan → build → push → deploy
+┌─────────────────────────────────────────────────────────┐
+│                   IRONMAN v4.0                          │
+├──────────────┬──────────────┬──────────────────────────┤
+│  PLATFORM    │  INFRA       │  NETWORK INTELLIGENCE    │
+│              │              │                          │
+│ SaaS Layer   │ Kubernetes   │ Streaming Telemetry      │
+│ Tenant ISO   │ Service Mesh │ Correlation Engine       │
+│ RBAC Adv     │ HPA/PDB      │ NetFlow Anomaly          │
+│ Billing      │ Helm Charts  │ DDoS Detection           │
+│ Data Eng     │ EDA (Kafka)  │ BGP Flowspec/RTBH        │
+│              │              │ Auto Remediation         │
+│              │              │ Intent-Based Networking  │
+├──────────────┴──────────────┴──────────────────────────┤
+│              OBSERVABILITY LAYER                        │
+│  OTel SDK → Traces(Tempo) + Logs(Loki) + Metrics(Prom) │
+│  Live Network Map | Alarm P1-P4 | Drill-down           │
+├─────────────────────────────────────────────────────────┤
+│           FOUNDATION DOMAINS (v1-v8)                    │
+│  Fullstack | Docker | Network | Automation | CI/CD      │
+└─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## ⚙️ Karakteristik
+## 📦 Package Info
 
-| | |
-|---|---|
-| 🪶 **Ringan** | Infrastruktur selalu Alpine/lightweight |
-| 🔀 **Auto-routing** | Deteksi domain otomatis dari konteks |
-| 🔐 **Secure by default** | Security tanpa perlu diminta eksplisit |
-| 🌐 **Multi-vendor** | Cisco, MikroTik, Juniper, Palo Alto, Fortinet, Huawei |
-| 🧠 **Brainstorm-ready** | Ideasi → implementasi dalam 1 skill |
-
----
+```json
+{
+  "name": "ironman",
+  "version": "4.0.0"
+}
+```
 
 ## 📄 License
 
-MIT — Free to use, modify, and distribute.
+MIT © hendrax5

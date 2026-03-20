@@ -1,18 +1,18 @@
 ---
 name: ironman
-description: "Ironman — AI skill untuk seluruh lifecycle engineering: brainstorming arsitektur, fullstack dev, Docker, multi-vendor networking (Cisco/MikroTik/Juniper/Fortinet/Palo Alto/Huawei), network automation, monitoring, dan security hardening — semua dalam satu workflow."
+description: "Ironman — AI skill untuk seluruh lifecycle engineering: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform (tenant isolation, RBAC, billing), full observability stack (OTel/Tempo/Loki), event-driven architecture, streaming telemetry, multi-vendor networking, network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation), dan security hardening — semua dalam satu workflow."
 category: bundled
 risk: safe
 source: custom
-tags: "[brainstorming, architecture, fullstack, docker, network, security, devops, backend, frontend, api, database, authentication, network-automation, multi-vendor, cisco, mikrotik, juniper, fortinet, palo-alto, monitoring, wireshark, netmiko, ansible, agnostic]"
+tags: "[brainstorming, architecture, fullstack, docker, kubernetes, saas, tenant, rbac, billing, data-engineering, opentelemetry, tracing, loki, live-map, alarm, kafka, nats, eda, gnmi, streaming-telemetry, correlation-engine, auto-remediation, intent-based-networking, netflow-anomaly, ddos, bgp-flowspec, rtbh, network, security, devops, backend, frontend, api, database, authentication, network-automation, multi-vendor, cisco, mikrotik, juniper, fortinet, palo-alto, monitoring, ansible, netmiko, service-mesh, istio, linkerd, helm, agnostic]"
 date_added: "2026-03-20"
-version: "3.1.0"
+version: "4.0.0"
 ---
 
-# 🦾 Ironman — Fullstack DevOps Security Engineer + Network Edition
+# 🦾 Ironman v4.0 — Fullstack · DevOps · Network Intelligence Platform
 
-> **1 skill. Semua domain. Zero switching.**
-> Dari menulis kode, containerisasi Docker, konfigurasi jaringan multi-vendor, automasi network, hingga security hardening — semua ditangani di sini.
+> **1 skill. 14 domain. Zero switching.**
+> Platform engineering dari kode, container, SaaS infra, observability penuh, event-driven, hingga network intelligence dengan auto-remediation.
 
 ---
 
@@ -20,28 +20,39 @@ version: "3.1.0"
 
 | # | Domain | Cakupan Utama |
 |---|---------|--------------|
+| 0 | 🧠 **Brainstorming** | Architecture decision, tech evaluation, network design thinking |
 | 1 | 🖥️ **Full-Stack Dev** | Backend + Frontend + API + DB — any language |
-| 2 | 🐳 **Docker & Containers** | Dockerfile, Compose, Alpine, security hardening |
+| 2 | 🐳 **Docker & Containers** | Dockerfile, Compose, multi-stage, security hardening |
 | 3 | 🌐 **Network Multi-Vendor** | Cisco, MikroTik, Juniper, Huawei, Palo Alto, Fortinet |
 | 4 | 🤖 **Network Automation** | Python, Netmiko, NAPALM, Ansible, Scapy |
 | 5 | 🔍 **Network Monitoring** | nmap, SNMP, NetFlow, Prometheus, Grafana |
 | 6 | 🛡️ **Network Security** | Wireshark, tcpdump, firewall automation, IDS/IPS |
 | 7 | 🔐 **App Security** | OWASP, auth, JWT, hardening, dependency audit |
 | 8 | 🚀 **CI/CD & Deploy** | GitHub Actions, test gates, zero-downtime deploy |
+| 9 | 🏗️ **SaaS Platform Layer** | Tenant isolation, RBAC advanced, billing, data engineering |
+| 10 | 📡 **Full Observability** | OTel, Tempo/Jaeger, Loki, live map, alarm P1-P4, drill-down |
+| 11 | ☸️ **Kubernetes & Scaling** | K8s manifests, HPA, Helm, service mesh (Istio/Linkerd) |
+| 12 | 📨 **Event-Driven Arch** | Kafka, NATS JetStream, CloudEvents, event sourcing |
+| 13 | 🧠 **Network Intelligence** | Streaming telemetry, correlation engine, NetFlow anomaly, DDoS, BGP Flowspec, RTBH, auto-remediation, IBN |
 
 ### Routing Otomatis
 
-| Kata kunci dalam permintaan | Domain aktif |
+| Kata kunci | Domain aktif |
 |---|---|
-| `brainstorm`, `ideasi`, `rancang`, `arsitektur`, `pilih teknologi`, `desain sistem`, `mana yang lebih baik`, `apa solusi terbaik` | 🧠 Brainstorming |
-| `build`, `API`, `component`, `endpoint`, `UI` | Full-Stack Dev |
+| `brainstorm`, `ideasi`, `rancang`, `arsitektur`, `pilih teknologi`, `desain sistem`, `mana yang lebih baik` | 🧠 Brainstorming |
+| `build`, `API`, `component`, `endpoint`, `UI`, `backend`, `frontend` | Full-Stack Dev |
 | `docker`, `dockerfile`, `compose`, `container` | Docker |
 | `cisco`, `mikrotik`, `juniper`, `huawei`, `fortinet`, `palo alto`, `switch`, `router`, `firewall` | Network Multi-Vendor |
 | `netmiko`, `ansible`, `automate`, `script network`, `napalm`, `paramiko` | Network Automation |
 | `nmap`, `snmp`, `netflow`, `monitor`, `grafana`, `prometheus` | Network Monitoring |
 | `wireshark`, `tcpdump`, `scapy`, `packet`, `intrusion`, `ids` | Network Security |
 | `jwt`, `auth`, `owasp`, `vulnerability`, `audit`, `hardening` | App Security |
-| `ci/cd`, `pipeline`, `deploy`, `github actions` | CI/CD |
+| `ci/cd`, `pipeline`, `deploy`, `github actions`, `gitops` | CI/CD |
+| `tenant`, `multi-tenant`, `rbac`, `billing`, `stripe`, `subscription`, `data pipeline`, `etl` | SaaS Platform |
+| `opentelemetry`, `otel`, `tracing`, `tempo`, `jaeger`, `loki`, `log correlation`, `alarm`, `live map`, `drill-down` | Full Observability |
+| `kubernetes`, `k8s`, `helm`, `hpa`, `istio`, `linkerd`, `service mesh`, `ingress`, `horizontal scaling` | Kubernetes & Scaling |
+| `kafka`, `nats`, `event-driven`, `message queue`, `cloudevents`, `event sourcing`, `dead letter` | EDA |
+| `gnmi`, `streaming telemetry`, `correlation engine`, `netflow anomaly`, `ddos`, `bgp flowspec`, `rtbh`, `auto remediation`, `intent-based`, `ibn` | Network Intelligence |
 
 ---
 
@@ -53,13 +64,11 @@ version: "3.1.0"
 
 #### 1. Architecture Decision
 ```
-[KONTEKS]  → Apa yang ingin dibangun? Skala berapa? Tim berapa orang?
-[TRADE-OFF] → Bandingkan 2-3 opsi dengan kelebihan/kekurangan spesifik
+[KONTEKS]     → Apa yang ingin dibangun? Skala? Tim? Budget?
+[TRADE-OFF]   → Bandingkan 2-3 opsi dengan kelebihan/kekurangan spesifik
 [REKOMENDASI] → Pilih 1 opsi terbaik + alasan konkret
-[NEXT STEP] → Langkah pertama yang bisa dikerjakan sekarang
+[NEXT STEP]   → Langkah pertama yang bisa dikerjakan sekarang
 ```
-
-**Trigger:** *"Mana yang lebih baik antara X dan Y?"*, *"Bagaimana arsitektur terbaik untuk..."*, *"Apa stack yang cocok untuk..."*
 
 #### 2. Network Design Thinking
 ```
@@ -69,8 +78,6 @@ version: "3.1.0"
 [VENDOR FIT] → Cisco (enterprise), MikroTik (SMB/ISP), Palo Alto (security-first)
 [HA PLAN]    → VRRP/HSRP, dual-uplink, failover strategy
 ```
-
-**Trigger:** *"Desain topologi jaringan untuk..."*, *"Pilih vendor mana yang cocok"*, *"Bagaimana segmentasi VLAN yang tepat"*
 
 #### 3. Tech Stack Evaluation
 ```
@@ -84,28 +91,20 @@ version: "3.1.0"
 → Winner: [pilihan] karena [alasan spesifik ke konteks user]
 ```
 
-**Trigger:** *"Pilih database mana"*, *"Framework apa yang cocok"*, *"Pakai Ansible atau Netmiko?"*
-
 #### 4. Problem Decomposition
 ```
-[ROOT CAUSE]  → Apa masalah sebenarnya? (5 Whys jika perlu)
-[SCOPE]       → Apa yang in-scope vs out-of-scope?
-[MILESTONE]   → Pecah jadi 3-5 langkah yang bisa dieksekusi
-[RISK]        → Apa yang bisa salah? Mitigasi?
-[QUICK WIN]   → Apa yang bisa dikerjakan dalam 1 jam pertama?
+[ROOT CAUSE] → Apa masalah sebenarnya? (5 Whys jika perlu)
+[SCOPE]      → Apa yang in-scope vs out-of-scope?
+[MILESTONE]  → Pecah jadi 3-5 langkah yang bisa dieksekusi
+[RISK]       → Apa yang bisa salah? Mitigasi?
+[QUICK WIN]  → Apa yang bisa dikerjakan dalam 1 jam pertama?
 ```
 
-**Trigger:** *"Saya tidak tahu harus mulai dari mana"*, *"Bantu saya rencanakan..."*, *"Breakdown masalah ini"*
-
-### Aturan Brainstorming
-```
-✅ Selalu tanya konteks spesifik sebelum merekomendasikan
-✅ Berikan 2-3 opsi konkret, bukan jawaban generik
-✅ Sertakan trade-off nyata (bukan hanya kelebihan)
-✅ Akhiri dengan rekomendasi 1 pilihan terbaik + alasan
-✅ Tawarkan untuk langsung lanjut ke implementasi setelah brainstorm
-❌ Jangan rekomendasikan teknologi yang tidak relevan dengan domain skill ini
-```
+**Aturan Brainstorming:**
+- ✅ Selalu tanya konteks spesifik sebelum merekomendasikan
+- ✅ Berikan 2-3 opsi konkret dengan trade-off nyata
+- ✅ Akhiri dengan rekomendasi 1 pilihan + alasan
+- ✅ Tawarkan lanjut ke implementasi setelah brainstorm
 
 ---
 
@@ -113,8 +112,8 @@ version: "3.1.0"
 
 ### Universal Architecture
 ```
-Presentation  →  API Layer  →  Service Layer  →  Repository  →  Data Layer
- (UI/React)     (REST/gRPC)   (Business Logic)  (Data Access)  (DB/Cache/Queue)
+Presentation → API Layer → Service Layer → Repository → Data Layer
+ (UI/React)   (REST/gRPC)  (Business)     (Data Access) (DB/Cache/Queue)
 ```
 
 ### Backend Patterns
@@ -143,55 +142,50 @@ func (h *Handler) CreateItem(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-### Frontend (Modern UI Rules)
+### Frontend Rules
 ```
-✅ Design modern: gunakan system font atau Google Fonts (Inter/Plus Jakarta Sans)
-✅ Color palette: harmonious, dark-mode ready, bukan plain red/blue/green
-✅ Micro-animations: hover effects, smooth transitions (150-300ms)
+✅ Design modern: Inter/Plus Jakarta Sans, dark-mode ready
+✅ Micro-animations: hover effects, smooth transitions 150-300ms
 ✅ Glassmorphism / subtle gradients untuk komponen utama
 ✅ Responsive by default: mobile-first
-✅ Loading skeleton, empty states, dan error states wajib ada
+✅ Loading skeleton, empty states, error states wajib ada
 ```
 
 ### API Design
 ```
-REST:  GET /api/v1/resources  →  POST  →  GET /:id  →  PATCH /:id  →  DELETE /:id
+REST: GET /api/v1/resources → POST → GET/:id → PATCH/:id → DELETE/:id
 Response: { data: T, meta?: { page, total }, error?: { code, message } }
 ```
 
 ### Database Universal
 ```sql
--- Every table:
 CREATE TABLE items (
     id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    tenant_id  UUID NOT NULL REFERENCES tenants(id),
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    deleted_at TIMESTAMPTZ  -- soft delete
+    deleted_at TIMESTAMPTZ
 );
--- Always index: FKs + query columns
-CREATE INDEX idx_items_created ON items(created_at DESC);
+CREATE INDEX idx_items_tenant ON items(tenant_id, created_at DESC);
 ```
 
 ---
 
-## 2️⃣ Docker & Containers (Lightweight)
+## 2️⃣ Docker & Containers
 
 ### Multi-Stage Dockerfile (Universal)
 ```dockerfile
-# deps
 FROM node:22-alpine AS deps
 WORKDIR /app
 COPY package*.json .
 RUN npm ci --only=production
 
-# builder
 FROM node:22-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-# runner (minimal, non-root)
 FROM node:22-alpine AS runner
 WORKDIR /app
 RUN addgroup -S app && adduser -S app -G app
@@ -202,591 +196,773 @@ EXPOSE 3000
 CMD ["node", "dist/main.js"]
 ```
 
-### Docker Compose (Production)
-```yaml
-services:
-  app:
-    build: { context: ., target: runner }
-    restart: unless-stopped
-    networks: [internal]
-    depends_on:
-      db: { condition: service_healthy }
-
-  db:
-    image: postgres:16-alpine
-    volumes: [pgdata:/var/lib/postgresql/data]
-    env_file: .env
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER"]
-      interval: 10s
-      retries: 5
-    networks: [internal]
-
-  cache:
-    image: redis:7-alpine
-    command: redis-server --requirepass ${REDIS_PASSWORD}
-    networks: [internal]
-
-  proxy:
-    image: nginx:alpine
-    ports: ["80:80", "443:443"]
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./certs:/etc/ssl/certs:ro
-    networks: [internal, external]
-
-networks:
-  internal: { driver: bridge, internal: true }
-  external: { driver: bridge }
-volumes:
-  pgdata:
-```
-
-### Container Security (Always Apply)
+### Container Security
 ```bash
-USER nonroot                           # never root
---read-only                            # read-only FS
---cap-drop ALL                         # drop all capabilities
---security-opt no-new-privileges       # no privilege escalation
---memory 512m --cpus 1.0              # resource limits
-trivy image <image>:latest             # scan before deploy
+USER nonroot                          # never root
+--read-only                           # read-only FS
+--cap-drop ALL                        # drop all capabilities
+--security-opt no-new-privileges      # no privilege escalation
 ```
 
 ---
 
-## 3️⃣ Network Engineering — Multi-Vendor
+## 3️⃣ Network Multi-Vendor
 
-### Cisco IOS / IOS-XE / NX-OS
-```
-# Interface + VLAN
-interface GigabitEthernet1/0/1
- switchport mode access
- switchport access vlan 100
- spanning-tree portfast
+### Config Patterns per Vendor
+```cisco
+! Cisco IOS/IOS-XE
+interface GigabitEthernet0/1
+ description [UPLINK-ISP1]
+ ip address 203.0.113.1 255.255.255.252
  no shutdown
-
-# OSPF
-router ospf 1
- network 10.0.0.0 0.0.0.255 area 0
- passive-interface GigabitEthernet0/0
-
-# BGP
-router bgp 65001
- neighbor 192.168.1.1 remote-as 65002
- address-family ipv4
-  network 10.0.0.0 mask 255.255.255.0
-
-# ACL
-ip access-list extended BLOCK_TELNET
- deny tcp any any eq 23
- permit ip any any
-interface G0/1
- ip access-group BLOCK_TELNET in
-
-# Save
-write memory
+ip route 0.0.0.0 0.0.0.0 203.0.113.2
 ```
-
-### MikroTik RouterOS
+```mikrotik
+# MikroTik RouterOS
+/ip address add address=203.0.113.1/30 interface=ether1 comment="ISP1-UPLINK"
+/ip route add dst-address=0.0.0.0/0 gateway=203.0.113.2
 ```
-# Firewall rule
-/ip firewall filter add chain=input protocol=tcp dst-port=22 src-address=10.0.0.0/8 action=accept
-/ip firewall filter add chain=input action=drop comment="drop all"
-
-# VLAN bridge
-/interface vlan add interface=ether1 name=vlan100 vlan-id=100
-/ip address add address=192.168.100.1/24 interface=vlan100
-
-# OSPF
-/routing ospf instance add name=default router-id=1.1.1.1
-/routing ospf area add name=backbone instance=default area-id=0.0.0.0
-/routing ospf interface-template add interfaces=ether1 area=backbone
-
-# WireGuard VPN
-/interface wireguard add name=wg0 listen-port=51820
-/interface wireguard peers add interface=wg0 public-key="<KEY>" allowed-address=10.0.0.2/32
-
-# Export config
-/export compact
-```
-
-### Juniper JunOS
-```
-# Interface
-set interfaces ge-0/0/0 unit 0 family inet address 10.0.0.1/24
-
-# OSPF
-set protocols ospf area 0.0.0.0 interface ge-0/0/0.0
-
-# Firewall filter
-set firewall filter BLOCK-TELNET term deny-telnet from protocol tcp
-set firewall filter BLOCK-TELNET term deny-telnet from destination-port telnet
-set firewall filter BLOCK-TELNET term deny-telnet then reject
-set firewall filter BLOCK-TELNET term allow-all then accept
-
-# Commit
-commit confirmed 5
-```
-
-### Palo Alto PAN-OS
-```
-# Security policy
-set rulebase security rules ALLOW-WEB from trust
-set rulebase security rules ALLOW-WEB to untrust
-set rulebase security rules ALLOW-WEB application [web-browsing ssl]
-set rulebase security rules ALLOW-WEB action allow
-set rulebase security rules ALLOW-WEB profile-setting profiles vulnerability strict
-
-# NAT
-set rulebase nat rules SRC-NAT source-translation dynamic-ip-and-port interface-address ip {}
-
-# Commit
-commit
-```
-
-### Fortinet FortiGate
-```
-# Firewall policy
-config firewall policy
-  edit 1
-    set name "LAN-to-WAN"
-    set srcintf "internal"
-    set dstintf "wan1"
-    set srcaddr "all"
-    set dstaddr "all"
-    set action accept
-    set schedule "always"
-    set service "ALL"
-    set nat enable
-  next
-end
-
-# SD-WAN
-config system sdwan
-  set status enable
-  config members
-    edit 1
-      set interface "wan1"
-      set gateway 1.2.3.1
-    next
-  end
-end
-```
-
-### Huawei VRP
-```
-# Interface
-interface GigabitEthernet0/0/1
- ip address 10.0.0.1 255.255.255.0
- undo shutdown
-
-# OSPF
-ospf 1 router-id 1.1.1.1
- area 0.0.0.0
-  network 10.0.0.0 0.0.0.255
-
-# ACL
-acl 3001
- rule 5 deny tcp destination-port eq telnet
- rule 100 permit ip
-interface GigabitEthernet0/0/1
- traffic-filter inbound acl 3001
-
-# Save
-save
+```juniper
+# Juniper JunOS
+set interfaces ge-0/0/0 unit 0 family inet address 203.0.113.1/30
+set routing-options static route 0.0.0.0/0 next-hop 203.0.113.2
 ```
 
 ---
 
 ## 4️⃣ Network Automation
 
-### Python — Netmiko (Multi-Vendor SSH)
+### Netmiko Universal
 ```python
 from netmiko import ConnectHandler
 
-devices = [
-    {"device_type": "cisco_ios",     "host": "192.168.1.1", "username": "admin", "password": "secret"},
-    {"device_type": "mikrotik_routeros", "host": "192.168.1.2", "username": "admin", "password": "secret"},
-    {"device_type": "juniper_junos", "host": "192.168.1.3", "username": "admin", "password": "secret"},
-    {"device_type": "fortinet",      "host": "192.168.1.4", "username": "admin", "password": "secret"},
-    {"device_type": "paloalto_panos","host": "192.168.1.5", "username": "admin", "password": "secret"},
-]
+device = {
+    "device_type": "cisco_ios",   # cisco_ios | mikrotik_routeros | juniper | fortinet
+    "host": "10.0.0.1",
+    "username": "admin",
+    "password": "secret",
+    "use_keys": True,             # prefer SSH keys in prod
+}
 
-def run_command(device: dict, command: str) -> str:
-    with ConnectHandler(**device) as conn:
-        return conn.send_command(command)
-
-# Parallel execution across all devices
-from concurrent.futures import ThreadPoolExecutor
-with ThreadPoolExecutor(max_workers=10) as ex:
-    results = list(ex.map(lambda d: run_command(d, "show version"), devices))
+with ConnectHandler(**device) as conn:
+    output = conn.send_command("show interfaces", use_textfsm=True)
+    conn.send_config_set(["interface Gi0/1", "description UPLINK"])
+    conn.save_config()
 ```
 
-### Python — NAPALM (Unified API)
+### NAPALM + Ansible
 ```python
+# NAPALM — vendor-agnostic
 from napalm import get_network_driver
-
-driver = get_network_driver("ios")   # ios | junos | eos | nxos | fortios
+driver = get_network_driver("ios")
 device = driver("10.0.0.1", "admin", "secret")
 device.open()
-
-# Get structured data
-facts    = device.get_facts()
-bgp      = device.get_bgp_neighbors()
-arp      = device.get_arp_table()
-lldp     = device.get_lldp_neighbors()
-ifaces   = device.get_interfaces()
-
-# Push config
-device.load_merge_candidate(config="interface Loopback0\n ip address 1.1.1.1 255.255.255.255\n")
-device.compare_config()   # diff before commit
-device.commit_config()
+facts = device.get_facts()
+bgp  = device.get_bgp_neighbors()
 device.close()
 ```
-
-### Ansible — Network Playbook
 ```yaml
----
-- name: Configure Network Devices
-  hosts: all
-  gather_facts: no
-  tasks:
-    - name: Backup config
-      cisco.ios.ios_config:
-        backup: yes
-      when: ansible_network_os == "cisco.ios.ios"
-
-    - name: Configure OSPF (Cisco)
-      cisco.ios.ios_ospf_interfaces:
-        config:
-          - name: GigabitEthernet1
-            address_family:
-              - afi: ipv4
-                cost: 10
-
-    - name: Configure VLAN (MikroTik)
-      community.routeros.api:
-        hostname: "{{ inventory_hostname }}"
-        username: admin
-        password: "{{ ansible_password }}"
-        path: interface vlan
-        add:
-          name: vlan100
-          interface: ether1
-          vlan-id: 100
-      when: ansible_network_os == "routeros"
-```
-
-### Scapy — Packet Crafting & Analysis
-```python
-from scapy.all import *
-
-# Packet sniffer
-def analyze(pkt):
-    if pkt.haslayer(IP) and pkt.haslayer(TCP):
-        print(f"{pkt[IP].src}:{pkt[TCP].sport} → {pkt[IP].dst}:{pkt[TCP].dport}")
-
-sniff(iface="eth0", filter="tcp", prn=analyze, store=False)
-
-# Custom packet
-pkt = IP(dst="10.0.0.1") / TCP(dport=80, flags="S")
-resp = sr1(pkt, timeout=1)
-
-# Port scanner
-def scan(target, ports):
-    syn = [IP(dst=target)/TCP(dport=p, flags="S") for p in ports]
-    ans, _ = sr(syn, timeout=2, verbose=0)
-    return [r.dport for s, r in ans if r.haslayer(TCP) and r[TCP].flags == 0x12]
+# Ansible task
+- name: Push VLAN config
+  cisco.ios.ios_vlans:
+    config:
+      - vlan_id: 100
+        name: SERVERS
+    state: replaced
 ```
 
 ---
 
 ## 5️⃣ Network Monitoring
 
-### nmap — Discovery & Scanning
-```bash
-# Host discovery
-nmap -sn 192.168.0.0/24
-
-# Full service scan
-nmap -sV -sC -O -p- 192.168.1.1 -oN scan.txt
-
-# Vuln scripts
-nmap --script vuln 192.168.1.1
-
-# Fast top-ports
-nmap -F --open 192.168.0.0/24
-```
-
-### SNMP Polling
-```python
-from pysnmp.hlapi import *
-
-OIDs = {
-    "sysDescr":     "1.3.6.1.2.1.1.1.0",
-    "ifInOctets":   "1.3.6.1.2.1.2.2.1.10",
-    "ifOutOctets":  "1.3.6.1.2.1.2.2.1.16",
-    "cpuLoad":      "1.3.6.1.4.1.9.2.1.58.0",  # Cisco
-}
-
-def snmp_get(host: str, community: str, oid: str):
-    for (err_ind, err_status, err_idx, var_binds) in getCmd(
-        SnmpEngine(),
-        CommunityData(community),
-        UdpTransportTarget((host, 161)),
-        ContextData(),
-        ObjectType(ObjectIdentity(oid))
-    ):
-        if not err_ind and not err_status:
-            return var_binds[0][1].prettyPrint()
-```
-
-### Prometheus + Grafana Stack
+### Prometheus + SNMP Exporter
 ```yaml
-# docker-compose monitoring
-services:
-  prometheus:
-    image: prom/prometheus:latest
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    ports: ["9090:9090"]
-
-  node-exporter:
-    image: prom/node-exporter:latest
-    network_mode: host
-    pid: host
-
-  snmp-exporter:
-    image: prom/snmp-exporter:latest
-    volumes:
-      - ./snmp.yml:/etc/snmp_exporter/snmp.yml
-    ports: ["9116:9116"]
-
-  grafana:
-    image: grafana/grafana:latest
-    ports: ["3000:3000"]
-    volumes:
-      - grafana_data:/var/lib/grafana
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+# prometheus.yml
+scrape_configs:
+  - job_name: network_devices
+    static_configs:
+      - targets: [10.0.0.1, 10.0.0.2]
+    metrics_path: /snmp
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - target_label: __address__
+        replacement: snmp-exporter:9116
 ```
 
----
-
-## 6️⃣ Network Security Tools
-
-### Wireshark / tcpdump
+### NetFlow Collection
 ```bash
-# Capture to file
-tcpdump -i eth0 -w capture.pcap
-
-# Filter specific traffic
-tcpdump -i eth0 'tcp port 443 and host 10.0.0.1'
-tcpdump -i eth0 'icmp or arp'
-
-# Read capture
-tcpdump -r capture.pcap -n
-
-# tshark (CLI Wireshark)
-tshark -r capture.pcap -T fields -e ip.src -e ip.dst -e tcp.dstport
-tshark -r capture.pcap -Y "http.request.method==POST"
-```
-
-### Firewall Automation Script
-```python
-import subprocess
-from typing import Literal
-
-def manage_rule(
-    action: Literal["add", "remove"],
-    direction: Literal["in", "out"],
-    protocol: str,
-    port: int,
-    src_ip: str = "any"
-):
-    """Cross-platform firewall rule manager (iptables/ufw)"""
-    flag = "-A" if action == "add" else "-D"
-    chain = "INPUT" if direction == "in" else "OUTPUT"
-    cmd = ["iptables", flag, chain, "-p", protocol]
-    if src_ip != "any":
-        cmd += ["-s", src_ip]
-    cmd += ["--dport", str(port), "-j", "ACCEPT"]
-    subprocess.run(cmd, check=True)
-    print(f"{'Added' if action == 'add' else 'Removed'} rule: {direction} {protocol}:{port} from {src_ip}")
-```
-
-### Network Inventory Automation
-```python
-import json
-from netmiko import ConnectHandler
-from napalm import get_network_driver
-
-def collect_inventory(devices: list[dict]) -> list[dict]:
-    """Collect device facts from multi-vendor devices"""
-    inventory = []
-    for dev in devices:
-        driver = get_network_driver(dev["os"])
-        conn = driver(dev["host"], dev["user"], dev["password"])
-        conn.open()
-        facts = conn.get_facts()
-        interfaces = conn.get_interfaces()
-        inventory.append({
-            "host": dev["host"],
-            "vendor": facts["vendor"],
-            "model": facts["model"],
-            "version": facts["os_version"],
-            "hostname": facts["hostname"],
-            "uptime": facts["uptime"],
-            "interface_count": len(interfaces),
-        })
-        conn.close()
-    return inventory
-
-# Export to JSON / CSV
-with open("inventory.json", "w") as f:
-    json.dump(collect_inventory(devices), f, indent=2)
+# nfcapd + nfdump
+nfcapd -D -l /data/netflow -p 9995 -T all
+nfdump -R /data/netflow -n 20 -s ip/bytes        # top talkers
+nfdump -R /data/netflow 'src ip 10.0.0.0/8' -o extended
 ```
 
 ---
 
-## 7️⃣ Application Security
+## 6️⃣ Network Security
 
-### Security by Default Checklist
-```markdown
-Auth:
-  ✅ Passwords: bcrypt/argon2, cost ≥ 12
-  ✅ JWT: RS256/ES256, short TTL (15m access / 7d refresh)
-  ✅ Refresh token rotation + server-side revocation
-  ✅ MFA untuk akses admin
+### Packet Analysis
+```bash
+# tcpdump — one-liners
+tcpdump -i eth0 -nn 'tcp and port 443' -w capture.pcap
+tcpdump -r capture.pcap 'host 10.0.0.1 and tcp[tcpflags] & tcp-syn != 0'
 
-Input:
-  ✅ Schema validation semua input (Zod / Pydantic / class-validator)
-  ✅ Parameterized query ONLY — no string concat SQL
-  ✅ File upload: validasi MIME + extension + magic bytes
-
-Transport:
-  ✅ HTTPS only, TLS 1.2+
-  ✅ HSTS: max-age=63072000
-  ✅ CSP, X-Frame-Options DENY, X-Content-Type-Options nosniff
-
-Infrastructure:
-  ✅ Container non-root + read-only FS
-  ✅ Secrets via env var / vault — tidak di code / image
-  ✅ Dependency scan: npm audit / pip-audit / trivy
-  ✅ Rate limiting: per IP + per user
+# tshark — statistics
+tshark -r capture.pcap -q -z io,stat,1          # traffic per second
+tshark -r capture.pcap -q -z conv,tcp           # TCP conversations
 ```
 
-### OWASP Top 10 Quick Reference
-```
-A01 Broken Access Control → validate ownership every request, deny by default
-A02 Cryptographic Failures → TLS everywhere, bcrypt passwords, no MD5/SHA1
-A03 Injection → parameterized queries, input schema validation
-A05 Security Misconfiguration → disable debug in prod, security headers
-A06 Vulnerable Components → Renovate/Dependabot + Trivy in CI
-A07 Auth Failures → token rotation, short TTL, secure cookies
-A09 Logging Failures → log auth events, NEVER log tokens/passwords/PII
+### Firewall Automation
+```python
+# Fortinet API
+import requests
+session = requests.Session()
+session.headers["Authorization"] = f"Bearer {token}"
+r = session.post(f"https://{fw_ip}/api/v2/cmdb/firewall/policy",
+    json={"srcintf":[{"name":"lan"}],"dstintf":[{"name":"wan"}],
+          "action":"accept","schedule":"always"})
 ```
 
 ---
 
-## 8️⃣ CI/CD Pipeline
+## 7️⃣ App Security
 
+### OWASP Top 10 Checklist (per endpoint)
+```
+✅ Input validation + Zod/Pydantic schema
+✅ Parameterized queries (no string concat SQL)
+✅ JWT: RS256, short expiry (15m), refresh rotation
+✅ Rate limiting: 100 req/15min per IP
+✅ Security headers: CSP, HSTS, X-Frame-Options
+✅ Dependency audit: npm audit / pip-audit weekly
+✅ Secrets in env var / Vault — never in code
+```
+
+### Auth Pattern
+```typescript
+// JWT middleware
+const verifyToken = (req, res, next) => {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "Unauthorized" });
+  try {
+    req.user = jwt.verify(token, process.env.JWT_SECRET);
+    next();
+  } catch { res.status(401).json({ error: "Token invalid" }); }
+};
+```
+
+---
+
+## 8️⃣ CI/CD & Deploy
+
+### GitHub Actions — Full Pipeline
 ```yaml
 name: CI/CD
-on:
-  push: { branches: [main] }
-  pull_request: { branches: [main] }
-
+on: [push]
 jobs:
-  quality:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          npm ci && npm run lint && npm run test:ci
-          npm audit --audit-level=high
+      - run: npm ci && npm test
+      - run: npm audit --audit-level=high
 
-  build-scan-push:
-    needs: quality
-    runs-on: ubuntu-latest
+  build-push:
+    needs: test
+    if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-      - run: docker build -t app:${{ github.sha }} .
-      - uses: aquasecurity/trivy-action@master
+      - uses: docker/build-push-action@v5
         with:
-          image-ref: app:${{ github.sha }}
-          severity: CRITICAL,HIGH
-          exit-code: 1
-      - if: github.ref == 'refs/heads/main'
-        run: |
-          docker tag app:${{ github.sha }} ghcr.io/${{ github.repository }}:latest
-          docker push ghcr.io/${{ github.repository }}:latest
+          push: true
+          tags: ${{ secrets.REGISTRY }}/app:${{ github.sha }}
 
   deploy:
-    needs: build-scan-push
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    needs: build-push
     steps:
-      - run: echo "Deploy → VPS/K8s/Render/Fly.io"
+      - run: |
+          kubectl set image deployment/app \
+            app=${{ secrets.REGISTRY }}/app:${{ github.sha }}
+          kubectl rollout status deployment/app
 ```
 
 ---
 
-## ⚡ Quick Reference Commands
+## 9️⃣ SaaS Platform Layer
 
-```bash
-# Docker
-docker compose up -d --build          # start all
-docker compose logs -f app            # watch logs
-docker stats                          # resource usage
-trivy image app:latest                # security scan
+### Tenant Isolation Strategy
+```
+Schema-per-tenant  → Kuat isolasi, kompleks migration. Cocok: <1000 tenants
+DB-per-tenant      → Isolasi penuh, mahal infra. Cocok: enterprise, regulated
+Row-level (RLS)    → Efisien, semua data 1 DB. Cocok: >1000 tenants, SaaS massal
+```
 
-# Network — Discovery
-nmap -sn 192.168.0.0/24              # host discovery
-nmap -sV -O 192.168.1.1              # service + OS detect
-arp-scan --localnet                   # ARP discovery
+```sql
+-- Row-Level Security (PostgreSQL)
+ALTER TABLE items ENABLE ROW LEVEL SECURITY;
+CREATE POLICY tenant_isolation ON items
+  USING (tenant_id = current_setting('app.current_tenant')::uuid);
 
-# Network — Capture & Analysis
-tcpdump -i eth0 -w cap.pcap          # capture
-tcpdump -r cap.pcap 'tcp port 80'    # read + filter
-tshark -r cap.pcap -Y "dns"          # DNS queries only
+-- Set per request
+SET app.current_tenant = 'uuid-of-tenant';
+```
 
-# Network — Connectivity
-ping -c 4 8.8.8.8                    # basic test
-traceroute 8.8.8.8                   # path trace
-mtr 8.8.8.8                          # continuous trace
-curl -Ik https://example.com         # HTTP headers + SSL
+### RBAC Advanced
+```typescript
+// Policy engine dengan CASL
+import { AbilityBuilder, createMongoAbility } from "@casl/ability";
 
-# SSL
-openssl s_client -connect host:443   # test SSL
-openssl x509 -in cert.pem -noout -dates  # cert expiry
+function defineAbilityFor(user: User) {
+  const { can, cannot, build } = new AbilityBuilder(createMongoAbility);
+  if (user.role === "admin") {
+    can("manage", "all");
+  } else if (user.role === "operator") {
+    can(["read", "update"], "Device", { tenantId: user.tenantId });
+  } else {
+    can("read", "Dashboard", { tenantId: user.tenantId });
+    cannot("delete", "all");
+  }
+  return build();
+}
 
-# Misc
-ss -tulpn                            # open ports
-netstat -rn                          # routing table
-ip route show                        # Linux routing
+// Usage
+const ability = defineAbilityFor(req.user);
+if (ability.cannot("delete", device)) throw new ForbiddenError();
+```
+
+### Billing Model (Stripe)
+```typescript
+// Subscription + usage-based metering
+const subscription = await stripe.subscriptions.create({
+  customer: tenant.stripeCustomerId,
+  items: [
+    { price: "price_base_plan" },               // flat fee
+    { price: "price_per_device_metered" },      // usage metered
+  ],
+  trial_period_days: 14,
+  expand: ["latest_invoice.payment_intent"],
+});
+
+// Report usage
+await stripe.subscriptionItems.createUsageRecord(
+  metered_item_id,
+  { quantity: activeDevices, action: "set" }
+);
+```
+
+### Data Engineering Layer
+```yaml
+# Apache Kafka → Flink → Data Mart pipeline
+Source:  Device telemetry (gNMI/SNMP) → Kafka topic: telemetry.raw
+Process: Flink SQL window aggregation (5min tumbling window)
+Sink:    PostgreSQL data mart + ClickHouse OLAP
+
+# Flink SQL example
+CREATE TABLE device_metrics AS
+SELECT device_id, window_end, avg(cpu_util), max(bw_mbps)
+FROM TABLE(TUMBLE(telemetry, DESCRIPTOR(event_time), INTERVAL '5' MINUTES))
+GROUP BY device_id, window_end;
 ```
 
 ---
 
-## 🔄 Full Workflow
+## 1️⃣0️⃣ Full Observability Stack
 
+### OpenTelemetry SDK Setup
+```python
+# Python FastAPI OTel instrumentation
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+
+provider = TracerProvider()
+provider.add_span_processor(
+    BatchSpanProcessor(OTLPSpanExporter(endpoint="http://otel-collector:4317"))
+)
+trace.set_tracer_provider(provider)
+FastAPIInstrumentor.instrument_app(app)  # auto-instrument all routes
 ```
-0. BRAINSTORM → Ideasi arsitektur, evaluasi stack, desain topologi, problem decomp
-1. DESIGN     → Architecture, entities, API contracts, network topology
-2. CODE       → Backend + Frontend + DB migrations (any language)
-3. CONTAINER  → Multi-stage Dockerfile + Compose (lightweight/Alpine)
-4. NETWORK    → Nginx SSL proxy + segmentation + multi-vendor config
-5. AUTOMATE   → Netmiko/NAPALM/Ansible scripts untuk network tasks
-6. MONITOR    → nmap + SNMP + Prometheus + Grafana dashboard
-7. SECURE     → OWASP checklist + container hardening + dependency scan
-8. DEPLOY     → CI/CD pipeline: test → scan → build → push → deploy
+
+### Distributed Tracing (Tempo/Jaeger)
+```yaml
+# docker-compose — OTel Collector → Tempo
+otel-collector:
+  image: otel/opentelemetry-collector-contrib:latest
+  command: ["--config=/etc/otel-collector.yaml"]
+
+tempo:
+  image: grafana/tempo:latest
+  command: ["-config.file=/etc/tempo.yaml"]
+  ports: ["3200:3200", "4317:4317"]
+```
+
+```yaml
+# OTel Collector config
+exporters:
+  otlp/tempo:
+    endpoint: tempo:4317
+    tls: { insecure: true }
+  loki:
+    endpoint: http://loki:3100/loki/api/v1/push
+
+service:
+  pipelines:
+    traces:  { receivers: [otlp], exporters: [otlp/tempo] }
+    logs:    { receivers: [otlp], exporters: [loki] }
+    metrics: { receivers: [otlp], exporters: [prometheus] }
+```
+
+### Log Correlation (Loki)
+```logql
+# LogQL — korelasikan logs dengan trace ID
+{service="api", level="error"} |= "traceID"
+  | json
+  | line_format "{{.traceID}} {{.message}}"
+
+# Loki + Alertmanager rule
+- alert: HighErrorRate
+  expr: sum(rate({service="api",level="error"}[5m])) > 10
+  annotations:
+    summary: "API error spike — check Tempo trace: {{$traceID}}"
+```
+
+### Alarm Severity Layer
+```
+P1 — CRITICAL  : Service down, revenue impact       → PagerDuty + Slack + SMS, response < 5min
+P2 — HIGH      : Degraded performance, partial outage → Slack + oncall, response < 30min
+P3 — MEDIUM    : Warning threshold crossed           → Slack channel, response < 4h
+P4 — LOW       : Informational, trending            → Ticket created, response next business day
+```
+
+```yaml
+# Alertmanager routing
+route:
+  receiver: slack-p3
+  routes:
+    - match: { severity: critical }
+      receiver: pagerduty-p1
+      repeat_interval: 5m
+    - match: { severity: high }
+      receiver: slack-p2-oncall
+```
+
+### Live Network Map
+```typescript
+// WebSocket push per 30s → Vis.js/D3 frontend
+io.on("connection", (socket) => {
+  setInterval(async () => {
+    const topology = await NetworkTopologyService.getGraph();
+    socket.emit("topology:update", {
+      nodes: topology.devices.map(d => ({
+        id: d.id, label: d.hostname,
+        color: d.status === "up" ? "#22c55e" : "#ef4444",
+      })),
+      edges: topology.links.map(l => ({
+        from: l.src, to: l.dst, label: `${l.bw_util}%`,
+        color: l.bw_util > 80 ? "#f97316" : "#64748b",
+      })),
+    });
+  }, 30_000);
+});
+```
+
+### Drill-Down: Alert → Root Cause
+```
+Alert (Alertmanager) 
+  → Grafana annotation (timestamp)
+  → Loki logs query (service + timerange)
+  → Tempo trace lookup (by traceID from log)
+  → K8s pod → node → host metrics (cAdvisor/Node Exporter)
+  → Network device correlation (Streaming Telemetry timestamp match)
 ```
 
 ---
 
-## When to Use This Skill
+## 1️⃣1️⃣ Kubernetes & Scaling
 
-Panggil skill ini untuk **apapun** yang berkaitan dengan:
-brainstorming arsitektur, ideasi teknologi, building apps, Docker, network configuration (multi-vendor), network automation, packet analysis, monitoring, security audit, atau CI/CD — **satu skill untuk seluruh lifecycle: dari ideasi sampai deploy.**
+### K8s Manifests Wajib (Production)
+```yaml
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: { maxSurge: 1, maxUnavailable: 0 }
+  template:
+    spec:
+      containers:
+        - name: api
+          image: registry/api:1.0.0
+          resources:
+            requests: { cpu: "100m", memory: "128Mi" }
+            limits:   { cpu: "500m", memory: "512Mi" }
+          readinessProbe:
+            httpGet: { path: /health, port: 3000 }
+          livenessProbe:
+            httpGet: { path: /health, port: 3000 }
+          env:
+            - name: DB_URL
+              valueFrom:
+                secretKeyRef: { name: app-secrets, key: db-url }
+---
+# hpa.yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: api-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: api
+  minReplicas: 3
+  maxReplicas: 20
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: { type: Utilization, averageUtilization: 70 }
+---
+# pdb.yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: api-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels: { app: api }
+```
+
+### Helm Chart Skeleton
+```
+charts/
+  app/
+    Chart.yaml
+    values.yaml          ← overrideable per environment
+    templates/
+      deployment.yaml
+      service.yaml
+      ingress.yaml
+      hpa.yaml
+      _helpers.tpl
+```
+
+### Service Mesh — Istio
+```yaml
+# VirtualService — canary (10% → new version)
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: api-vs
+spec:
+  http:
+    - route:
+        - destination: { host: api, subset: v1 }
+          weight: 90
+        - destination: { host: api, subset: v2 }
+          weight: 10
+---
+# DestinationRule — circuit breaker
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: api-dr
+spec:
+  host: api
+  trafficPolicy:
+    outlierDetection:
+      consecutive5xxErrors: 5
+      interval: 30s
+      baseEjectionTime: 30s
+```
+
+### Horizontal Scaling Design
+```
+Stateless services  → scale freely (replicas + HPA)
+Stateful services   → StatefulSet + PVC per pod
+Databases           → PgBouncer connection pool + read replicas
+Cache               → Redis Cluster (sharding)
+Message queue       → Kafka partition = parallel consumers
+```
+
+---
+
+## 1️⃣2️⃣ Event-Driven Architecture
+
+### Kafka Topology
+```
+Topics:
+  telemetry.raw       → partitions: 12, retention: 7d, replication: 3
+  alerts.processed    → partitions: 6, retention: 30d
+  remediation.cmds    → partitions: 3, retention: 1d, compacted
+
+Consumer Groups:
+  cg-correlation   → reads telemetry.raw → writes alerts.processed
+  cg-remediation   → reads alerts.processed → writes remediation.cmds
+  cg-datamart      → reads telemetry.raw → writes to ClickHouse
+```
+
+### Python Kafka Producer/Consumer
+```python
+from confluent_kafka import Producer, Consumer
+
+# Producer — telemetry ingest
+p = Producer({"bootstrap.servers": "kafka:9092"})
+p.produce("telemetry.raw", key=device_id,
+          value=json.dumps(metric_payload).encode())
+p.flush()
+
+# Consumer — correlation engine
+c = Consumer({"bootstrap.servers": "kafka:9092",
+              "group.id": "cg-correlation",
+              "auto.offset.reset": "latest"})
+c.subscribe(["telemetry.raw"])
+while True:
+    msg = c.poll(1.0)
+    if msg and not msg.error():
+        process_telemetry(json.loads(msg.value()))
+```
+
+### CloudEvents Schema
+```json
+{
+  "specversion": "1.0",
+  "type": "network.device.alert",
+  "source": "correlation-engine",
+  "id": "uuid-v4",
+  "time": "2026-03-20T12:00:00Z",
+  "datacontenttype": "application/json",
+  "data": {
+    "device_id": "R1",
+    "severity": "P1",
+    "condition": "interface_down",
+    "interface": "Gi0/0"
+  }
+}
+```
+
+### Dead Letter Queue
+```python
+# Pada consumer error, kirim ke DLQ
+def handle_message(msg):
+    try:
+        process(msg)
+    except Exception as e:
+        dlq_producer.produce("topic.dlq",
+            value=msg.value(),
+            headers={"error": str(e), "original-topic": msg.topic()})
+```
+
+---
+
+## 1️⃣3️⃣ Network Intelligence & Defense
+
+### 🔭 Streaming Telemetry (gNMI)
+```python
+from grpc import insecure_channel
+from gnmi_pb2_grpc import gNMIStub
+from gnmi_pb2 import SubscribeRequest, Subscription, SubscriptionList
+
+channel = insecure_channel("router1:57400")
+stub = gNMIStub(channel)
+
+subscriptions = [
+    Subscription(path=parse_path("interfaces/interface/state/counters"),
+                 mode=SAMPLE, sample_interval=10_000_000_000),  # 10s
+]
+sub_list = SubscriptionList(subscription=subscriptions, mode=STREAM)
+request = SubscribeRequest(subscribe=sub_list)
+
+for response in stub.Subscribe(iter([request])):
+    for update in response.update.update:
+        metric = parse_gnmi_update(update)
+        producer.produce("telemetry.raw", value=json.dumps(metric))
+```
+
+### 🧩 Correlation Engine
+```python
+# Rule-based + threshold correlation
+class CorrelationEngine:
+    RULES = [
+        {
+            "name": "interface_down_bgp_drop",
+            "conditions": [
+                {"metric": "interface.oper_status", "op": "==", "val": "DOWN"},
+                {"metric": "bgp.neighbor.state",    "op": "==", "val": "IDLE"},
+            ],
+            "window_sec": 30,
+            "severity": "P1",
+            "action": "auto_remediate",
+        },
+        {
+            "name": "cpu_spike_with_traffic_burst",
+            "conditions": [
+                {"metric": "cpu.utilization", "op": ">", "val": 90},
+                {"metric": "interface.in_octets_rate", "op": ">", "val": 1e9},
+            ],
+            "window_sec": 60,
+            "severity": "P2",
+            "action": "alert_only",
+        },
+    ]
+
+    def evaluate(self, telemetry_window: list[dict]) -> list[Alert]:
+        alerts = []
+        for rule in self.RULES:
+            if all(self._check(c, telemetry_window) for c in rule["conditions"]):
+                alerts.append(Alert(rule=rule["name"],
+                                    severity=rule["severity"],
+                                    action=rule["action"]))
+        return alerts
+```
+
+### 🌊 NetFlow Anomaly Detection
+```python
+import numpy as np
+from collections import defaultdict
+
+class NetFlowAnomalyDetector:
+    def __init__(self, window=300, z_threshold=3.0):
+        self.history = defaultdict(list)   # src_ip → [bps values]
+        self.z_threshold = z_threshold
+
+    def detect(self, flow: dict) -> bool:
+        key = flow["src_ip"]
+        bps = flow["bytes"] / flow["duration"]
+        self.history[key].append(bps)
+        if len(self.history[key]) < 10:
+            return False   # need baseline
+        mean = np.mean(self.history[key][-60:])
+        std  = np.std(self.history[key][-60:])
+        z_score = (bps - mean) / (std + 1e-9)
+        return abs(z_score) > self.z_threshold   # anomaly detected
+```
+
+### 💀 DDoS Detection Logic
+```python
+class DDoSDetector:
+    THRESHOLDS = {
+        "syn_flood":    {"metric": "tcp.syn_count",   "pps": 10_000},
+        "volumetric":   {"metric": "interface.in_bps","bps": 10e9},   # 10 Gbps
+        "dns_amplify":  {"metric": "udp.port53.rate", "pps": 50_000},
+        "icmp_flood":   {"metric": "icmp.rate",        "pps": 5_000},
+    }
+
+    def classify(self, telemetry: dict) -> DDoSEvent | None:
+        for attack_type, thresh in self.THRESHOLDS.items():
+            if telemetry.get(thresh["metric"], 0) > list(thresh.values())[1]:
+                return DDoSEvent(
+                    type=attack_type,
+                    target_ip=telemetry["dst_ip"],
+                    magnitude=telemetry[thresh["metric"]],
+                )
+        return None
+```
+
+### 🚦 BGP Flowspec / RTBH Automation
+```python
+# ExaBGP — programmatic BGP announcement
+# RTBH: blackhole attacker source via BGP community
+def announce_rtbh(victim_ip: str, next_hop: str = "192.0.2.1"):
+    """Announce RTBH via ExaBGP API"""
+    message = (f"announce route {victim_ip}/32 "
+               f"next-hop {next_hop} "
+               f"community [65000:666]")   # 666 = RTBH community (RFC 5635)
+    with open("/var/run/exabgp/exabgp.cmd", "w") as f:
+        f.write(message)
+
+# Flowspec — rate-limit specific traffic pattern
+def announce_flowspec(dst_prefix: str, protocol: str, rate_limit_mbps: int):
+    message = (f"announce flow route destination {dst_prefix} "
+               f"protocol {protocol} "
+               f"then rate-limit {rate_limit_mbps * 1_000_000}")
+    with open("/var/run/exabgp/exabgp.cmd", "w") as f:
+        f.write(message)
+```
+
+### 🔄 Auto Remediation Engine
+```python
+class AutoRemediationEngine:
+    """Detect → Decide → Execute → Verify"""
+
+    PLAYBOOKS = {
+        "interface_down": [
+            {"action": "shutdown_interface", "wait": 5},
+            {"action": "no_shutdown_interface", "wait": 10},
+            {"action": "verify_bgp_session"},
+        ],
+        "ddos_detected": [
+            {"action": "announce_rtbh",             "wait": 0},
+            {"action": "notify_noc",                "wait": 0},
+            {"action": "capture_traffic_sample",    "wait": 30},
+            {"action": "evaluate_withdraw_rtbh",    "wait": 300},
+        ],
+        "cpu_overload": [
+            {"action": "identify_top_processes"},
+            {"action": "redistribute_traffic_bgp"},
+            {"action": "scale_out_servicechain"},
+        ],
+    }
+
+    async def execute(self, alert: Alert, device: Device):
+        playbook = self.PLAYBOOKS.get(alert.rule)
+        if not playbook:
+            return
+        for step in playbook:
+            fn = getattr(self, f"action_{step['action']}")
+            result = await fn(device)
+            audit_log(alert, step, result)
+            if not result.success:
+                await self.escalate_to_human(alert, step, result)
+                break
+            await asyncio.sleep(step.get("wait", 0))
+```
+
+### 🎯 Intent-Based Networking (IBN)
+```yaml
+# Intent YAML — describe "apa yang diinginkan", bukan "bagaimana"
+intent:
+  name: isolate_compromised_host
+  target_host: 10.1.2.100
+  policy:
+    - deny_internet_access: true
+    - allow_internal_segments: [management]
+    - log_all_traffic: true
+  rollback_after_minutes: 60
+```
+
+```python
+# IBN Engine — compile intent → vendor config
+class IBNEngine:
+    def compile(self, intent: dict, device: Device) -> list[str]:
+        compiler = self._get_compiler(device.vendor)
+        commands = compiler.translate(intent)
+        return commands   # ready-to-push via Netmiko/NAPALM
+
+    def _get_compiler(self, vendor: str):
+        return {
+            "cisco":    CiscoIntentCompiler(),
+            "juniper":  JuniperIntentCompiler(),
+            "fortinet": FortinetIntentCompiler(),
+        }[vendor]
+```
+
+---
+
+## 🔑 Global Rules (All Domains)
+
+```
+✅ Selalu tanya konteks spesifik jika tidak jelas (lingkungan, skala, vendor, budget)
+✅ Prioritaskan solusi production-ready, bukan proof-of-concept
+✅ Sertakan error handling dan observability di setiap kode yang dibuat
+✅ Security by default: non-root, env vars untuk secrets, input validation
+✅ Tawarkan lanjut ke domain berikutnya setelah menyelesaikan 1 domain
+❌ Jangan rekomendasikan teknologi di luar domain ini tanpa alasan jelas
+❌ Jangan buat kode tanpa context: selalu tanyakan target vendor/platform
+```
