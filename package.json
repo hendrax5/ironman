@@ -1,7 +1,7 @@
 {
   "name": "ironman-skill",
-  "version": "4.0.0",
-  "description": "🦾 Ironman v4.0 — AI Skill: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, full observability (OTel/Tempo/Loki), event-driven architecture, streaming telemetry, network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation), dan security hardening.",
+  "version": "5.0.0",
+  "description": "🦾 Ironman v5.0 — AI Skill: brainstorming arsitektur, fullstack dev, Docker, Docker Compose Auto-Docs, Kubernetes, SaaS platform, full observability (OTel/Tempo/Loki), event-driven architecture, streaming telemetry, network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation), AI/ML Ops (model serving, MLflow, training pipelines), dan security hardening.",
   "bin": {
     "ironman-skill": "./bin/install.js"
   },
@@ -17,7 +17,10 @@
     "kafka", "nats", "event-driven", "cloudevents",
     "gnmi", "streaming-telemetry", "correlation-engine",
     "ddos", "bgp-flowspec", "rtbh", "auto-remediation",
-    "intent-based-networking", "fullstack", "security",
+    "intent-based-networking", "docker-compose-autodocs",
+    "mlops", "mlflow", "model-serving", "training-pipeline",
+    "gpu-scheduling", "data-drift",
+    "fullstack", "security",
     "antigravity", "claude-code"
   ],
   "author": "hendrax5",

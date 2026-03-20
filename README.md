@@ -1,9 +1,9 @@
-# 🦾 Ironman v4.0 — AI Skill: Fullstack · DevOps · Network Intelligence Platform
+# 🦾 Ironman v5.0 — AI Skill: Fullstack · DevOps · AI/ML · Network Intelligence Platform
 
-> **1 skill. 14 domain. Zero switching.**  
-> Brainstorming → fullstack dev → Docker → Kubernetes → SaaS platform → full observability → event-driven → network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation) — semua dalam satu workflow.
+> **1 skill. 16 domain. Zero switching.**  
+> Brainstorming → fullstack dev → Docker → Docker Compose Auto-Docs → Kubernetes → SaaS platform → full observability → event-driven → network intelligence → AI/ML Ops — semua dalam satu workflow.
 
-[![Version](https://img.shields.io/badge/version-4.0.0-blue)](https://github.com/hendrax5/ironman)
+[![Version](https://img.shields.io/badge/version-5.0.0-blue)](https://github.com/hendrax5/ironman)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -46,6 +46,8 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 | 11 | ☸️ **Kubernetes & Scaling** | K8s manifests, HPA, PDB, Helm, Istio/Linkerd service mesh |
 | 12 | 📨 **Event-Driven Arch** | Kafka, NATS JetStream, CloudEvents, event sourcing, DLQ |
 | 13 | 🧠 **Network Intelligence** | gNMI streaming, correlation engine, NetFlow anomaly, DDoS detection, BGP Flowspec, RTBH, auto-remediation engine, Intent-Based Networking |
+| 14 | 📋 **Docker Compose Auto-Docs** | Auto-generate compose + .env.example + README (ports, creds, quick start), health checks, backup scripts |
+| 15 | 🤖 **AI/ML Ops** | Model serving (FastAPI/Triton), MLflow experiment tracking, training pipeline, GPU scheduling, data drift monitoring |
 
 ---
 
@@ -77,6 +79,17 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 "Implementasi DDoS detector SYN flood + trigger RTBH via ExaBGP"
 "Buat Auto Remediation engine: detect → decide → execute → verify"
 "Compile intent YAML isolate-host ke Cisco CLI via IBN Engine"
+
+# Docker Compose Auto-Docs
+"Buatkan docker-compose.yml lengkap dengan PostgreSQL, Redis, Grafana + .env.example"
+"Generate README section Docker Quick Start dengan default credentials table"
+"Buat backup script database ke GitHub"
+
+# AI/ML Ops
+"Buatkan model serving API dengan FastAPI + PyTorch"
+"Setup MLflow experiment tracking dengan PostgreSQL backend"
+"Buat data drift monitor dengan KS-test per feature"
+"Buatkan ML CI/CD pipeline: auto-train → validate → deploy"
 ```
 
 ---
@@ -85,7 +98,7 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                   IRONMAN v4.0                          │
+│                   IRONMAN v5.0                          │
 ├──────────────┬──────────────┬──────────────────────────┤
 │  PLATFORM    │  INFRA       │  NETWORK INTELLIGENCE    │
 │              │              │                          │
@@ -96,6 +109,11 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 │ Data Eng     │ EDA (Kafka)  │ BGP Flowspec/RTBH        │
 │              │              │ Auto Remediation         │
 │              │              │ Intent-Based Networking  │
+├──────────────┼──────────────┼──────────────────────────┤
+│  AI/ML OPS   │  DOCKER DOCS │                          │
+│ Model Serve  │ Auto Compose │                          │
+│ MLflow       │ .env.example │                          │
+│ Drift Mon    │ README Gen   │                          │
 ├──────────────┴──────────────┴──────────────────────────┤
 │              OBSERVABILITY LAYER                        │
 │  OTel SDK → Traces(Tempo) + Logs(Loki) + Metrics(Prom) │
@@ -113,7 +131,7 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 ```json
 {
   "name": "ironman",
-  "version": "4.0.0"
+  "version": "5.0.0"
 }
 ```
 

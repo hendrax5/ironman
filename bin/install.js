@@ -20,7 +20,7 @@ function install(dest) {
 }
 
 function run() {
-  console.log('\n🦾 Ironman Skill Installer v4.0\n');
+  console.log('\n🦾 Ironman Skill Installer v5.0\n');
 
   const installed = [];
   const failed    = [];
