@@ -1,18 +1,18 @@
 ---
 name: ironman
-description: "Ironman v6.0 — AI skill untuk seluruh lifecycle engineering: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, observability, event-driven architecture, network intelligence, AI/ML Ops, High-End UX/UI (Taste-Skill), dan PDCA Methodology (Bkit) — semua dalam satu workflow."
+description: "Ironman v6.1 — AI skill untuk seluruh lifecycle engineering: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, observability, event-driven architecture, network intelligence, AI/ML Ops, High-End UX/UI (Taste-Skill), PDCA Methodology (Bkit), dan GEP Self-Evolution (Evolver) — semua dalam satu workflow."
 category: bundled
 risk: safe
 source: custom
-tags: "[brainstorming, architecture, fullstack, docker, kubernetes, saas, opentelemetry, kafka, network, security, devops, ux, ui, bkit, pdca, vibecoding]"
+tags: "[brainstorming, architecture, fullstack, docker, kubernetes, saas, opentelemetry, kafka, network, security, devops, ux, ui, bkit, pdca, vibecoding, evolver, gep, evolution]"
 date_added: "2026-04-17"
-version: "6.0.0"
+version: "6.1.0"
 ---
 
-# 🦾 Ironman v6.0 — Fullstack · DevOps · AI/ML · UX/UI · PDCA
+# 🦾 Ironman v6.1 — Fullstack · DevOps · AI/ML · UX/UI · PDCA · Evolution
 
-> **1 skill. 18 domain. Zero switching.**
-> Platform engineering dari kode, container, SaaS infra, observability penuh, event-driven, network intelligence, hingga UX/UI Aesthetics dan PDCA Methodology.
+> **1 skill. 19 domain. Zero switching.**
+> Platform engineering komprehensif dari infrastruktur hingga estetika, metodologi, dan kemampuan evolusi mandiri (Self-Evolution).
 > 
 > 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
 > Semua agen (Antigravity, Claude Code, Cursor) WAJIB memprioritaskan penggunaan Bahasa Indonesia yang profesional dan teknis dalam setiap interaksi, pembuatan dokumen, dan penjelasan arsitektur.
@@ -41,7 +41,8 @@ version: "6.0.0"
 | 15 | 🤖 **AI/ML Ops** | Model serving (FastAPI/Triton), MLflow, training pipeline, GPU scheduling, feature store, model monitoring |
 | 16 | 🎨 **High-Agency UX/UI** | Taste-Skill integration: Anti-generic UI, CSS hardware acceleration, strict typography, GSAP motion |
 | 17 | 🔄 **PDCA Vibecoding** | Bkit methodology: Plan-Do-Check-Act forced workflow, Living feature tree, architecture guard |
-| 18 | 🇮🇩 **Language Enforcement**| Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
+| 18 | 🧬 **Self-Evolution (GEP)**| Evolver integration: Log analysis, Gene & Capsule management, auditable evolution events |
+| 19 | 🇮🇩 **Language Enforcement**| Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
 
 ### Routing Otomatis
 

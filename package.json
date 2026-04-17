@@ -1,7 +1,7 @@
 {
   "name": "ironman-skill",
-  "version": "6.0.0",
-  "description": "🦾 Ironman v6.0 — AI Skill: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, observability (OTel/Tempo/Loki), event-driven architecture, network intelligence, AI/ML Ops, UX/UI Taste-Skill, dan PDCA Methodology.",
+  "version": "6.1.0",
+  "description": "🦾 Ironman v6.1 — AI Skill: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, observability (OTel/Tempo/Loki), event-driven architecture, network intelligence, AI/ML Ops, UX/UI Taste-Skill, PDCA Methodology, dan GEP Self-Evolution.",
   "bin": {
     "ironman-skill": "./bin/install.js"
   },
@@ -20,7 +20,7 @@
     "intent-based-networking", "docker-compose-autodocs",
     "mlops", "mlflow", "model-serving", "training-pipeline",
     "gpu-scheduling", "data-drift",
-    "fullstack", "security", "ux", "ui", "taste-skill", "pdca", "bkit", "vibecoding",
+    "fullstack", "security", "ux", "ui", "taste-skill", "pdca", "bkit", "vibecoding", "evolver", "gep", "evolution",
     "antigravity", "claude-code"
   ],
   "author": "hendrax5",
