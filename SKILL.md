@@ -1,18 +1,21 @@
 ---
 name: ironman
-description: "Ironman — AI skill untuk seluruh lifecycle engineering: brainstorming arsitektur, fullstack dev, Docker, Docker Compose Auto-Docs, Kubernetes, SaaS platform (tenant isolation, RBAC, billing), full observability stack (OTel/Tempo/Loki), event-driven architecture, streaming telemetry, multi-vendor networking, network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation), AI/ML Ops (model serving, MLflow, training pipelines), dan security hardening — semua dalam satu workflow."
+description: "Ironman v6.0 — AI skill untuk seluruh lifecycle engineering: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, observability, event-driven architecture, network intelligence, AI/ML Ops, High-End UX/UI (Taste-Skill), dan PDCA Methodology (Bkit) — semua dalam satu workflow."
 category: bundled
 risk: safe
 source: custom
-tags: "[brainstorming, architecture, fullstack, docker, docker-compose, docker-autodocs, kubernetes, saas, tenant, rbac, billing, data-engineering, opentelemetry, tracing, loki, live-map, alarm, kafka, nats, eda, gnmi, streaming-telemetry, correlation-engine, auto-remediation, intent-based-networking, netflow-anomaly, ddos, bgp-flowspec, rtbh, network, security, devops, backend, frontend, api, database, authentication, network-automation, multi-vendor, cisco, mikrotik, juniper, fortinet, palo-alto, monitoring, ansible, netmiko, service-mesh, istio, linkerd, helm, mlops, mlflow, model-serving, training-pipeline, gpu-scheduling, feature-store, agnostic]"
-date_added: "2026-03-20"
-version: "5.0.0"
+tags: "[brainstorming, architecture, fullstack, docker, kubernetes, saas, opentelemetry, kafka, network, security, devops, ux, ui, bkit, pdca, vibecoding]"
+date_added: "2026-04-17"
+version: "6.0.0"
 ---
 
-# 🦾 Ironman v5.0 — Fullstack · DevOps · AI/ML · Network Intelligence Platform
+# 🦾 Ironman v6.0 — Fullstack · DevOps · AI/ML · UX/UI · PDCA
 
-> **1 skill. 16 domain. Zero switching.**
-> Platform engineering dari kode, container, SaaS infra, observability penuh, event-driven, hingga network intelligence dengan auto-remediation.
+> **1 skill. 18 domain. Zero switching.**
+> Platform engineering dari kode, container, SaaS infra, observability penuh, event-driven, network intelligence, hingga UX/UI Aesthetics dan PDCA Methodology.
+> 
+> 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
+> Semua agen (Antigravity, Claude Code, Cursor) WAJIB memprioritaskan penggunaan Bahasa Indonesia yang profesional dan teknis dalam setiap interaksi, pembuatan dokumen, dan penjelasan arsitektur.
 
 ---
 
@@ -36,6 +39,9 @@ version: "5.0.0"
 | 13 | 🧠 **Network Intelligence** | Streaming telemetry, correlation engine, NetFlow anomaly, DDoS, BGP Flowspec, RTBH, auto-remediation, IBN |
 | 14 | 📋 **Docker Compose Auto-Docs** | Auto-generate compose + .env.example + README (ports, creds, quick start), health checks, backup |
 | 15 | 🤖 **AI/ML Ops** | Model serving (FastAPI/Triton), MLflow, training pipeline, GPU scheduling, feature store, model monitoring |
+| 16 | 🎨 **High-Agency UX/UI** | Taste-Skill integration: Anti-generic UI, CSS hardware acceleration, strict typography, GSAP motion |
+| 17 | 🔄 **PDCA Vibecoding** | Bkit methodology: Plan-Do-Check-Act forced workflow, Living feature tree, architecture guard |
+| 18 | 🇮🇩 **Language Enforcement**| Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
 
 ### Routing Otomatis
 

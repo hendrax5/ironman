@@ -1,7 +1,7 @@
 {
   "name": "ironman-skill",
-  "version": "5.0.0",
-  "description": "🦾 Ironman v5.0 — AI Skill: brainstorming arsitektur, fullstack dev, Docker, Docker Compose Auto-Docs, Kubernetes, SaaS platform, full observability (OTel/Tempo/Loki), event-driven architecture, streaming telemetry, network intelligence (DDoS/BGP Flowspec/RTBH/auto-remediation), AI/ML Ops (model serving, MLflow, training pipelines), dan security hardening.",
+  "version": "6.0.0",
+  "description": "🦾 Ironman v6.0 — AI Skill: brainstorming arsitektur, fullstack dev, Docker, Kubernetes, SaaS platform, observability (OTel/Tempo/Loki), event-driven architecture, network intelligence, AI/ML Ops, UX/UI Taste-Skill, dan PDCA Methodology.",
   "bin": {
     "ironman-skill": "./bin/install.js"
   },
@@ -20,7 +20,7 @@
     "intent-based-networking", "docker-compose-autodocs",
     "mlops", "mlflow", "model-serving", "training-pipeline",
     "gpu-scheduling", "data-drift",
-    "fullstack", "security",
+    "fullstack", "security", "ux", "ui", "taste-skill", "pdca", "bkit", "vibecoding",
     "antigravity", "claude-code"
   ],
   "author": "hendrax5",
@@ -31,5 +31,5 @@
   },
   "homepage": "https://github.com/hendrax5/ironman#readme",
   "engines": { "node": ">=16" },
-  "files": ["SKILL.md", "README.md", "bin/"]
+  "files": ["SKILL.md", "README.md", "bin/", "skills/"]
 }

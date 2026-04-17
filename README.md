@@ -1,9 +1,12 @@
-# 🦾 Ironman v5.0 — AI Skill: Fullstack · DevOps · AI/ML · Network Intelligence Platform
+# 🦾 Ironman v6.0 — AI Skill: Fullstack · DevOps · AI/ML · UX/UI · PDCA
 
-> **1 skill. 16 domain. Zero switching.**  
-> Brainstorming → fullstack dev → Docker → Docker Compose Auto-Docs → Kubernetes → SaaS platform → full observability → event-driven → network intelligence → AI/ML Ops — semua dalam satu workflow.
+> **1 skill. 18 domain. Zero switching.**  
+> Brainstorming → fullstack dev → Docker → Kubernetes → SaaS platform → full observability → event-driven → network intelligence → AI/ML Ops → UX/UI (Taste) → PDCA Methodology — semua dalam satu workflow.
+> 
+> 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
+> Agen secara sistematis akan selalu menjawab, mendokumentasikan, dan merancang dalam Bahasa Indonesia.
 
-[![Version](https://img.shields.io/badge/version-5.0.0-blue)](https://github.com/hendrax5/ironman)
+[![Version](https://img.shields.io/badge/version-6.0.0-blue)](https://github.com/hendrax5/ironman)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -48,6 +51,9 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 | 13 | 🧠 **Network Intelligence** | gNMI streaming, correlation engine, NetFlow anomaly, DDoS detection, BGP Flowspec, RTBH, auto-remediation engine, Intent-Based Networking |
 | 14 | 📋 **Docker Compose Auto-Docs** | Auto-generate compose + .env.example + README (ports, creds, quick start), health checks, backup scripts |
 | 15 | 🤖 **AI/ML Ops** | Model serving (FastAPI/Triton), MLflow experiment tracking, training pipeline, GPU scheduling, data drift monitoring |
+| 16 | 🎨 **High-Agency UX/UI** | Taste-Skill integration: Anti-generic UI, CSS hardware acceleration, strict typography, GSAP motion |
+| 17 | 🔄 **PDCA Vibecoding** | Bkit methodology: Plan-Do-Check-Act forced workflow, Living feature tree, architecture guard |
+| 18 | 🇮🇩 **Language Enforcement**| Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
 
 ---
 
@@ -98,7 +104,7 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                   IRONMAN v5.0                          │
+│                   IRONMAN v6.0                          │
 ├──────────────┬──────────────┬──────────────────────────┤
 │  PLATFORM    │  INFRA       │  NETWORK INTELLIGENCE    │
 │              │              │                          │
@@ -110,10 +116,10 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 │              │              │ Auto Remediation         │
 │              │              │ Intent-Based Networking  │
 ├──────────────┼──────────────┼──────────────────────────┤
-│  AI/ML OPS   │  DOCKER DOCS │                          │
-│ Model Serve  │ Auto Compose │                          │
-│ MLflow       │ .env.example │                          │
-│ Drift Mon    │ README Gen   │                          │
+│  AI/ML OPS   │  UX/UI TASTE │  PDCA METHODOLOGY        │
+│ Model Serve  │ High-End UI  │ Plan-Do-Check-Act        │
+│ MLflow       │ GSAP Motion  │ Architecture Guard       │
+│ Drift Mon    │ Typography   │ Living Feature Tree      │
 ├──────────────┴──────────────┴──────────────────────────┤
 │              OBSERVABILITY LAYER                        │
 │  OTel SDK → Traces(Tempo) + Logs(Loki) + Metrics(Prom) │
@@ -131,7 +137,7 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 ```json
 {
   "name": "ironman",
-  "version": "5.0.0"
+  "version": "6.0.0"
 }
 ```
 
