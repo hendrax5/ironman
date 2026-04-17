@@ -1,7 +1,7 @@
 ---
 name: capability-evolver
-description: A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution. Communicates with EvoMap Hub via local Proxy mailbox.
-tags: [meta, ai, self-improvement, core]
+description: "A self-evolution engine for AI agents (GEP). Analyzes runtime history to identify improvements. 🇮🇩 BAHASA PRIORITAS: INDONESIA - Gunakan Bahasa Indonesia untuk penjelasan evolusi dan audit log."
+tags: [meta, ai, self-improvement, core, indonesia]
 permissions: [network, shell]
 metadata:
   clawdbot:

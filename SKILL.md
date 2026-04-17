@@ -11,7 +11,15 @@ version: "6.1.0"
 
 # 🦾 Ironman v6.1 — Fullstack · DevOps · AI/ML · UX/UI · PDCA · Evolution
 
-> **1 skill. 19 domain. Zero switching.**
+> **1 skill. 19 domain.** 
+   - **Strict Coding Conventions (Wajib):**
+   - **Maintainability:** Kode modular, maks 300 baris/file, maks 30 baris/fungsi, penamaan jelas.
+   - **Architecture:** Layered architecture, dilarang logika bisnis di controller, dilarang DB query di luar repository.
+   - **Scalability:** Dukung horizontal scaling, hindari tight coupling, gunakan Dependency Injection.
+   - **Testability:** Fungsi harus testable, tanpa hidden side effects.
+   - **Refactor:** Jika kompleks, sederhanakan. Prioritaskan kejelasan di atas optimasi.
+
+3. **Zero-Switching PDCA Workflow:**
 > Platform engineering komprehensif dari infrastruktur hingga estetika, metodologi, dan kemampuan evolusi mandiri (Self-Evolution).
 > 
 > 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
