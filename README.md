@@ -228,7 +228,7 @@ ironman/
 ├── SKILL.md                  ← Entry point skill utama (19 domain)
 ├── ENGINEERING_LAW.md        ← ⚖️ Engineering Supreme Law v3.0
 ├── PIPELINE.md               ← 🔄 Product Lifecycle Pipeline v1.0
-├── AUTONOMY.md               ← 🧠 Autonomy Engine v1.0
+├── AUTONOMY.md               ← 🧠 Autonomy Engine v2.0 (Self-Optimizing)
 ├── README.md                 ← Dokumentasi ini
 ├── package.json              ← NPM package config
 ├── LICENSE                   ← MIT License
@@ -237,8 +237,18 @@ ironman/
 ├── skills/
 │   ├── prd-agent/
 │   │   └── SKILL.md          ← 🧠 PRD Agent v2.0 (AI-First Dynamic PRD)
+│   ├── api-design/
+│   │   └── SKILL.md          ← 🌐 Response shape, URL convention, versioning
+│   ├── observability/
+│   │   └── SKILL.md          ← 📡 Structured logging, tracing, health check
+│   ├── async-queue/
+│   │   └── SKILL.md          ← 📨 Idempotency, DLQ, retry policy, 202 pattern
+│   ├── error-handling/
+│   │   └── SKILL.md          ← 🚨 Error taxonomy, centralized handler
+│   ├── data-access/
+│   │   └── SKILL.md          ← 🗄️ Transaction boundary, repository, query
 │   └── evolver/
-│       └── SKILL.md          ← GEP Self-Evolution module
+│       └── SKILL.md          ← 🧬 GEP Self-Evolution module
 └── assets/
     └── gep/
         └── events.jsonl      ← Log evolusi & kegagalan
@@ -257,6 +267,11 @@ ironman/
 | **Product Pipeline** | 6 fase lifecycle: Idea → PRD → UX → Tasks → Dev → Deploy | ✅ |
 | **PRD Agent v2.0** | AI-First Dynamic PRD: 7 modul, living document, auto-validate | ✅ |
 | **Autonomy Engine v2.0** | 5 sistem: Self-Planning, Arch Evolution, GEP MAX, Auto Loop, **Self-Optimizing** | ✅ |
+| **API Design** | Response shape `{data,meta,error}`, URL convention, versioning, pagination | ✅ |
+| **Observability** | Structured logging (traceId/spanId), health check, metrics standar | ✅ |
+| **Async Queue** | Idempotency, DLQ, retry policy, pola 202 Accepted | ✅ |
+| **Error Handling** | Taksonomi error, centralized handler, mapping HTTP status | ✅ |
+| **Data Access** | Transaction boundary (di service!), repository pattern, query optimization | ✅ |
 | **Prompt Master** | HTML tool untuk generate prompt High-Agency | Manual |
 
 ---
