@@ -13,7 +13,10 @@ version: "6.1.0"
 
 > **1 skill. 19 domain.** 
    - **Strict Coding Conventions (Wajib):**
-   - **Maintainability:** Kode modular, maks 300 baris/file, maks 30 baris/fungsi, penamaan jelas.
+   - **Maintainability:** 
+     - Kode modular, maks 300 baris/file, maks 30 baris/fungsi.
+     - **Zero-Horizontal Scroll:** Maks 100-120 karakter per baris. Pecah baris jika terlalu panjang.
+     - **Clean Readability:** Gunakan Object Destructuring untuk >2 parameter, terapkan Early Return untuk mengurangi nesting.
    - **Architecture:** Layered architecture, dilarang logika bisnis di controller, dilarang DB query di luar repository.
    - **Scalability:** Dukung horizontal scaling, hindari tight coupling, gunakan Dependency Injection.
    - **Testability:** Fungsi harus testable, tanpa hidden side effects.
