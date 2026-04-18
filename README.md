@@ -8,6 +8,7 @@
 
 [![Version](https://img.shields.io/badge/version-6.1.0-blue)](https://github.com/hendrax5/ironman)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Law: Supreme v3.0](https://img.shields.io/badge/Law-Engineering%20Supreme%20v3.0-red)](ENGINEERING_LAW.md)
 
 ---
 
@@ -17,7 +18,10 @@
 npx github:hendrax5/ironman
 ```
 
-Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` secara otomatis.
+Installer otomatis melakukan:
+1. **MemPalace MCP** — Clone, install dependensi, dan register sebagai MCP server
+2. **Ironman Skill** — Deploy ke Antigravity, Claude Code, dan project-level `.agents/`
+3. **Engineering Supreme Law** — Menyertakan `ENGINEERING_LAW.md` sebagai hukum wajib
 
 ### Manual Install
 
@@ -31,10 +35,59 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 
 ---
 
-## 🗺️ Domain Coverage
+## ⚖️ Engineering Supreme Law v3.0
+
+> **BERLAKU UNTUK: semua code generation, semua agent, semua task.**
+> Dokumen lengkap: [`ENGINEERING_LAW.md`](ENGINEERING_LAW.md)
+
+### Tiga Hukum Utama (Tidak Boleh Dilanggar)
+
+| # | Hukum | Deskripsi |
+|---|-------|-----------|
+| 1 | **Single Responsibility** | Satu modul = satu domain = satu alasan untuk berubah |
+| 2 | **Dependency Inversion** | Bergantung pada abstraksi, bukan pada implementasi konkret |
+| 3 | **Fault Isolation** | Gagal secara lokal. Satu modul tidak boleh meruntuhkan sistem |
+
+### 20 Section Hukum
+
+| Section | Topik | Inti Aturan |
+|---------|-------|-------------|
+| 0 | Tiga Hukum Utama | SRP, DIP, Fault Isolation |
+| 1 | Workflow Law | `implementation_plan.md` WAJIB dibuat & disetujui sebelum coding |
+| 2 | Maintainability | 300 baris/file, 30 baris/fungsi, 120 char/baris, 4 param max, 3 nesting max |
+| 3 | Project Structure | Feature-first: `src/modules/`, `src/shared/`, `src/core/` |
+| 4 | Architecture Layers | Controller → Service → Repository (one-way, strict) |
+| 5 | Data Access | No `SELECT *`, pagination wajib, transaction di service layer |
+| 6 | Validation | 3 layer: HTTP input → Business rule → DB constraint |
+| 7 | Error Handling | Typed errors (`DomainError`, `NotFoundError`, dll.) + centralized mapping |
+| 8 | API Design | Versioned REST (`/api/v1/`), konsisten response shape |
+| 9 | Security | Blue Team mode, RBAC/ABAC, parameterized query only |
+| 10 | Observability | Structured JSON logging, traceId propagation, log level ketat |
+| 11 | Async Processing | Job idempotent, DLQ, 202 Accepted untuk long-running |
+| 12 | Caching | Service layer, TTL eksplisit, namespace per modul |
+| 13 | Testability | 70/20/10 pyramid, coverage minimum per layer |
+| 14 | Configuration | Env var only, fail fast, `.env.example` wajib |
+| 15 | Deployment | Docker, non-root, health checks, graceful shutdown |
+| 16 | UI/UX | Glassmorphism, GSAP, dark mode, mobile-first |
+| 17 | Self-Evolution (GEP) | Log kegagalan ke `events.jsonl`, ekstrak pola ke MemPalace |
+| 18 | Hard Constraints | 19 larangan absolut (god class, empty catch, SELECT *, dll.) |
+| 19 | Quality Gate | Checklist wajib sebelum task dianggap selesai |
+
+### Hard Limits (Quick Reference)
+
+```
+Maks 300 baris/file          Maks 30 baris/fungsi
+Maks 4 parameter/fungsi     Maks 3 level nesting
+Maks 120 karakter/baris     Maks 10 public method/class
+ZERO horizontal scroll      Plan WAJIB sebelum coding
+```
+
+---
+
+## 🗺️ Domain Coverage (20 Domain)
 
 | # | Domain | Cakupan |
-|---|---------|---------|
+|---|---------|---------| 
 | 0 | 🧠 Brainstorming | Architecture decision, tech evaluation, network design thinking |
 | 1 | 🖥️ Full-Stack Dev | Backend + Frontend + API + DB — any language |
 | 2 | 🐳 Docker & Containers | Dockerfile, Compose, multi-stage, security hardening |
@@ -44,21 +97,21 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 | 6 | 🛡️ Network Security | Wireshark, tcpdump, firewall automation, IDS/IPS |
 | 7 | 🔐 App Security | OWASP, auth, JWT, hardening, dependency audit |
 | 8 | 🚀 CI/CD & Deploy | GitHub Actions, test gates, zero-downtime deploy |
-| 9 | 🏗️ **SaaS Platform** | Tenant isolation, RBAC advanced (CASL/OPA), billing (Stripe), data engineering |
-| 10 | 📡 **Full Observability** | OTel SDK, Tempo/Jaeger, Loki, live network map, alarm P1-P4, drill-down |
-| 11 | ☸️ **Kubernetes & Scaling** | K8s manifests, HPA, PDB, Helm, Istio/Linkerd service mesh |
-| 12 | 📨 **Event-Driven Arch** | Kafka, NATS JetStream, CloudEvents, event sourcing, DLQ |
-| 13 | 🧠 **Network Intelligence** | gNMI streaming, correlation engine, NetFlow anomaly, DDoS detection, BGP Flowspec, RTBH, auto-remediation engine, Intent-Based Networking |
-| 14 | 📋 **Docker Compose Auto-Docs** | Auto-generate compose + .env.example + README (ports, creds, quick start), health checks, backup scripts |
-| 15 | 🤖 **AI/ML Ops** | Model serving (FastAPI/Triton), MLflow experiment tracking, training pipeline, GPU scheduling, data drift monitoring |
-| 16 | 🎨 **High-Agency UX/UI** | Taste-Skill integration: Anti-generic UI, CSS hardware acceleration, strict typography, GSAP motion |
-| 17 | 🔄 **PDCA Vibecoding** | Bkit methodology: Plan-Do-Check-Act forced workflow, Living feature tree, architecture guard |
-| 18 | 🧬 **Self-Evolution (GEP)**| Evolver integration: Log analysis, Gene & Capsule management, auditable evolution events |
-| 19 | 🇮🇩 **Language Enforcement**| Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
+| 9 | 🏗️ SaaS Platform | Tenant isolation, RBAC advanced (CASL/OPA), billing (Stripe), data engineering |
+| 10 | 📡 Full Observability | OTel SDK, Tempo/Jaeger, Loki, live network map, alarm P1-P4, drill-down |
+| 11 | ☸️ Kubernetes & Scaling | K8s manifests, HPA, PDB, Helm, Istio/Linkerd service mesh |
+| 12 | 📨 Event-Driven Arch | Kafka, NATS JetStream, CloudEvents, event sourcing, DLQ |
+| 13 | 🧠 Network Intelligence | gNMI streaming, correlation engine, NetFlow anomaly, DDoS detection, BGP Flowspec, RTBH, auto-remediation, IBN |
+| 14 | 📋 Docker Compose Auto-Docs | Auto-generate compose + .env.example + README, health checks, backup scripts |
+| 15 | 🤖 AI/ML Ops | Model serving (FastAPI/Triton), MLflow, training pipeline, GPU scheduling, data drift monitoring |
+| 16 | 🎨 High-Agency UX/UI | Taste-Skill: Anti-generic UI, CSS hardware acceleration, strict typography, GSAP motion |
+| 17 | 🔄 PDCA Vibecoding | Bkit: Plan-Do-Check-Act forced workflow, Living feature tree, architecture guard |
+| 18 | 🧬 Self-Evolution (GEP) | Evolver: Log analysis, Gene & Capsule management, auditable evolution events |
+| 19 | 🇮🇩 Language Enforcement | Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
 
 ---
 
-## 🚀 Usage Examples
+## 🚀 Contoh Penggunaan
 
 ```
 # Brainstorming
@@ -77,59 +130,93 @@ Installs to **Antigravity**, **Claude Code**, dan **project-level** `.agents/` s
 "Buat K8s deployment manifest production-ready dengan HPA dan PDB"
 "Setup Istio canary deployment 10%/90%"
 
-# EDA
+# Event-Driven Architecture
 "Rancang Kafka topic topology untuk telemetry pipeline 100k events/sec"
 
 # Network Intelligence
 "Tulis gNMI subscriber untuk Cisco IOS-XR"
 "Buat correlation engine: interface down + BGP drop → auto-remediate"
 "Implementasi DDoS detector SYN flood + trigger RTBH via ExaBGP"
-"Buat Auto Remediation engine: detect → decide → execute → verify"
-"Compile intent YAML isolate-host ke Cisco CLI via IBN Engine"
 
 # Docker Compose Auto-Docs
-"Buatkan docker-compose.yml lengkap dengan PostgreSQL, Redis, Grafana + .env.example"
+"Buatkan docker-compose.yml lengkap dengan PostgreSQL, Redis, Grafana"
 "Generate README section Docker Quick Start dengan default credentials table"
-"Buat backup script database ke GitHub"
 
 # AI/ML Ops
 "Buatkan model serving API dengan FastAPI + PyTorch"
 "Setup MLflow experiment tracking dengan PostgreSQL backend"
 "Buat data drift monitor dengan KS-test per feature"
-"Buatkan ML CI/CD pipeline: auto-train → validate → deploy"
 ```
 
 ---
 
-## 🧩 Platform Intelligence Layers
+## 🧩 Platform Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                   IRONMAN v6.1                          │
-├──────────────┬──────────────┬──────────────────────────┤
-│  PLATFORM    │  INFRA       │  NETWORK INTELLIGENCE    │
-│              │              │                          │
-│ SaaS Layer   │ Kubernetes   │ Streaming Telemetry      │
-│ Tenant ISO   │ Service Mesh │ Correlation Engine       │
-│ RBAC Adv     │ HPA/PDB      │ NetFlow Anomaly          │
-│ Billing      │ Helm Charts  │ DDoS Detection           │
-│ Data Eng     │ EDA (Kafka)  │ BGP Flowspec/RTBH        │
-│              │              │ Auto Remediation         │
-│              │              │ Intent-Based Networking  │
-├──────────────┼──────────────┼──────────────────────────┤
-│  AI/ML OPS   │  UX/UI TASTE │  PDCA & EVOLUTION        │
-│ Model Serve  │ High-End UI  │ Plan-Do-Check-Act        │
-│ MLflow       │ GSAP Motion  │ GEP Self-Evolution       │
-│ Drift Mon    │ Typography   │ Gene & Capsule Store     │
-├──────────────┴──────────────┴──────────────────────────┤
-│              OBSERVABILITY LAYER                        │
-│  OTel SDK → Traces(Tempo) + Logs(Loki) + Metrics(Prom) │
-│  Live Network Map | Alarm P1-P4 | Drill-down           │
-├─────────────────────────────────────────────────────────┤
-│           FOUNDATION DOMAINS (v1-v8)                    │
-│  Fullstack | Docker | Network | Automation | CI/CD      │
-└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│                      IRONMAN v6.1                               │
+│              ⚖️ Engineering Supreme Law v3.0                    │
+├──────────────┬──────────────┬───────────────────────────────────┤
+│  PLATFORM    │  INFRA       │  NETWORK INTELLIGENCE             │
+│              │              │                                   │
+│ SaaS Layer   │ Kubernetes   │ Streaming Telemetry (gNMI)        │
+│ Tenant ISO   │ Service Mesh │ Correlation Engine                │
+│ RBAC Adv     │ HPA/PDB      │ NetFlow Anomaly Detection         │
+│ Billing      │ Helm Charts  │ DDoS Detection + RTBH             │
+│ Data Eng     │ EDA (Kafka)  │ BGP Flowspec                      │
+│              │              │ Auto Remediation Engine            │
+│              │              │ Intent-Based Networking            │
+├──────────────┼──────────────┼───────────────────────────────────┤
+│  AI/ML OPS   │  UX/UI TASTE │  PDCA & EVOLUTION                 │
+│ Model Serve  │ Glassmorphism│ Plan-Do-Check-Act                 │
+│ MLflow       │ GSAP Motion  │ GEP Self-Evolution                │
+│ Drift Mon    │ Dark Mode    │ Gene & Capsule Store              │
+│ GPU Sched    │ Mobile-First │ MemPalace Integration             │
+├──────────────┴──────────────┴───────────────────────────────────┤
+│                    OBSERVABILITY LAYER                           │
+│    OTel SDK → Traces(Tempo) + Logs(Loki) + Metrics(Prometheus)  │
+│    Live Network Map | Alarm P1-P4 | Drill-down | traceId        │
+├─────────────────────────────────────────────────────────────────┤
+│                 FOUNDATION DOMAINS (v1-v8)                       │
+│    Fullstack | Docker | Network | Automation | Security | CI/CD  │
+├─────────────────────────────────────────────────────────────────┤
+│                   MEMORY & CONTEXT LAYER                         │
+│    MemPalace MCP (Long-term Memory) | GEP Genes (Reusable)      │
+└─────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## 📁 Struktur Repositori
+
+```
+ironman/
+├── SKILL.md                  ← Entry point skill utama (19 domain)
+├── ENGINEERING_LAW.md        ← ⚖️ Engineering Supreme Law v3.0
+├── README.md                 ← Dokumentasi ini
+├── package.json              ← NPM package config
+├── LICENSE                   ← MIT License
+├── bin/
+│   └── install.js            ← Installer otomatis (Skill + MemPalace MCP)
+├── skills/
+│   └── evolver/
+│       └── SKILL.md          ← GEP Self-Evolution module
+└── assets/
+    └── gep/
+        └── events.jsonl      ← Log evolusi & kegagalan
+```
+
+---
+
+## 🔗 Ekosistem Terintegrasi
+
+| Komponen | Fungsi | Auto-Install? |
+|----------|--------|:---:|
+| **Ironman Skill** | 19 domain engineering dalam satu file | ✅ |
+| **Engineering Supreme Law** | 20 section hukum coding absolut | ✅ |
+| **MemPalace MCP** | Long-term memory & knowledge graph untuk agen AI | ✅ |
+| **Evolver (GEP)** | Self-evolution engine: belajar dari kegagalan | ✅ |
+| **Prompt Master** | HTML tool untuk generate prompt High-Agency | Manual |
 
 ---
 
