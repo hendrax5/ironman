@@ -11,22 +11,21 @@ version: "6.1.0"
 
 # 🦾 Ironman v6.1 — Fullstack · DevOps · AI/ML · UX/UI · PDCA · Evolution
 
-> **1 skill. 19 domain.** 
-   - **Strict Coding Conventions (Wajib):**
-   - **Maintainability:** 
-     - Kode modular, maks 300 baris/file, maks 30 baris/fungsi.
-     - **Zero-Horizontal Scroll:** Maks 100-120 karakter per baris. Pecah baris jika terlalu panjang.
-     - **Clean Readability:** Gunakan Object Destructuring untuk >2 parameter, terapkan Early Return untuk mengurangi nesting.
-   - **Architecture:** Layered architecture, dilarang logika bisnis di controller, dilarang DB query di luar repository.
-   - **Scalability:** Dukung horizontal scaling, hindari tight coupling, gunakan Dependency Injection.
-   - **Testability:** Fungsi harus testable, tanpa hidden side effects.
-   - **Refactor:** Jika kompleks, sederhanakan. Prioritaskan kejelasan di atas optimasi.
-
-3. **Zero-Switching PDCA Workflow:**
+> **1 skill. 19 domain. Zero switching.**
 > Platform engineering komprehensif dari infrastruktur hingga estetika, metodologi, dan kemampuan evolusi mandiri (Self-Evolution).
-> 
+>
+> ⚖️ **ENGINEERING SUPREME LAW v3.0 — BERLAKU TANPA PENGECUALIAN**
+> Sebelum menulis kode apapun, baca dan patuhi `ENGINEERING_LAW.md`.
+> Dokumen tersebut mengatur 20 section hukum: Tiga Hukum Utama, Workflow, Maintainability,
+> Project Structure, Architecture Layers, Data Access, Validation, Error Handling,
+> API Design, Security, Observability, Async Processing, Caching, Testability,
+> Configuration, Deployment, UI/UX, Self-Evolution (GEP), Hard Constraints, dan Quality Gate.
+> **JIKA SATU PUN DILANGGAR → STOP. REFACTOR. BARU LANJUT.**
+>
 > 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
 > Semua agen (Antigravity, Claude Code, Cursor) WAJIB memprioritaskan penggunaan Bahasa Indonesia yang profesional dan teknis dalam setiap interaksi, pembuatan dokumen, dan penjelasan arsitektur.
+
+
 
 ---
 
