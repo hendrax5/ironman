@@ -27,6 +27,11 @@ version: "6.1.0"
 > `User Idea → PRD Agent → UX/Flow Agent → Task Breakdown → Ironman Dev → QA → Security & Deploy`
 > Setiap fase menghasilkan artefak wajib. Dilarang loncat fase.
 >
+> 🧠 **AUTONOMY ENGINE v1.0 — SELF-THINKING AI PARTNER**
+> Ironman berpikir mandiri via `AUTONOMY.md`:
+> Self-Planning | Architecture Evolution | Failure-Driven Dev (GEP MAX) | Autonomous Product Loop
+> Prinsip utama: **Long-term maintainability > Short-term fix**
+>
 > 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
 > Semua agen (Antigravity, Claude Code, Cursor) WAJIB memprioritaskan penggunaan Bahasa Indonesia yang profesional dan teknis dalam setiap interaksi, pembuatan dokumen, dan penjelasan arsitektur.
 

@@ -211,6 +211,10 @@ FASE 6 — Security & Deploy → Menghasilkan: deploy-report.md
 ├─────────────────────────────────────────────────────────────────┤
 │                   MEMORY & CONTEXT LAYER                         │
 │    MemPalace MCP (Long-term Memory) | GEP Genes (Reusable)      │
+├─────────────────────────────────────────────────────────────────┤
+│                   AUTONOMY ENGINE v1.0                            │
+│  Self-Planning | Arch Evolution | GEP MAX | Autonomous Loop     │
+│  ★ Long-term Maintainability > Short-term Fix                    │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -223,12 +227,15 @@ ironman/
 ├── SKILL.md                  ← Entry point skill utama (19 domain)
 ├── ENGINEERING_LAW.md        ← ⚖️ Engineering Supreme Law v3.0
 ├── PIPELINE.md               ← 🔄 Product Lifecycle Pipeline v1.0
+├── AUTONOMY.md               ← 🧠 Autonomy Engine v1.0
 ├── README.md                 ← Dokumentasi ini
 ├── package.json              ← NPM package config
 ├── LICENSE                   ← MIT License
 ├── bin/
 │   └── install.js            ← Installer otomatis (Skill + MemPalace MCP)
 ├── skills/
+│   ├── prd-agent/
+│   │   └── SKILL.md          ← 🧠 PRD Agent v2.0 (AI-First Dynamic PRD)
 │   └── evolver/
 │       └── SKILL.md          ← GEP Self-Evolution module
 └── assets/
@@ -247,6 +254,8 @@ ironman/
 | **MemPalace MCP** | Long-term memory & knowledge graph untuk agen AI | ✅ |
 | **Evolver (GEP)** | Self-evolution engine: belajar dari kegagalan | ✅ |
 | **Product Pipeline** | 6 fase lifecycle: Idea → PRD → UX → Tasks → Dev → Deploy | ✅ |
+| **PRD Agent v2.0** | AI-First Dynamic PRD: 7 modul, living document, auto-validate | ✅ |
+| **Autonomy Engine** | Self-Planning, Arch Evolution, GEP MAX, Autonomous Loop | ✅ |
 | **Prompt Master** | HTML tool untuk generate prompt High-Agency | Manual |
 
 ---
