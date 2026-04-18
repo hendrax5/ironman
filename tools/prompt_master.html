@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ironman v6.1 Prompt Master — Self-Optimizing System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070a;
+            --card-bg: #0f1117;
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --accent-glow: rgba(16, 185, 129, 0.15);
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+            --panel-bg: #111827;
+            --warn: #f59e0b;
+            --info: #3b82f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 30px;
+            width: 100%;
+            max-width: 1300px;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .side-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .panel-card {
+            background: var(--panel-bg);
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 4px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #10b981, #34d399, #6ee7b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .version-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        input, select, textarea {
+            background: #1a1d26;
+            border: 1px solid var(--border);
+            padding: 11px 14px;
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 0.92rem;
+            transition: all 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+        }
+
+        .full-width { grid-column: span 2; }
+        .full-3 { grid-column: span 3; }
+
+        /* Toggle Chips */
+        .toggle-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+
+        .toggle-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            background: #1f2937;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .toggle-chip:hover { border-color: var(--accent); background: rgba(16, 185, 129, 0.08); }
+        .toggle-chip.active { border-color: var(--accent); background: rgba(16, 185, 129, 0.15); color: var(--accent); }
+        .toggle-chip .check { display: none; }
+        .toggle-chip.active .check { display: inline; }
+
+        button.primary {
+            background: linear-gradient(135deg, var(--accent), #059669);
+            color: #fff;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+        }
+
+        .idea-chip {
+            display: inline-block;
+            padding: 5px 11px;
+            background: #1f2937;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            font-size: 0.75rem;
+            margin: 3px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .idea-chip:hover { border-color: var(--accent); background: rgba(16, 185, 129, 0.1); }
+
+        .output-container { margin-top: 28px; position: relative; }
+        .output-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+
+        textarea#output {
+            width: 100%;
+            height: 300px;
+            resize: vertical;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.82rem;
+            background: #090b10;
+            color: #10b981;
+            padding: 20px;
+            line-height: 1.6;
+            border: 1px solid var(--border);
+        }
+
+        .copy-btn {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            border-radius: 6px;
+            width: auto;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover { background: rgba(16, 185, 129, 0.1); }
+
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+        .stat-box {
+            background: #0f1117;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .stat-box .num { font-size: 1.3rem; font-weight: 800; color: var(--accent); }
+        .stat-box .lbl { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 1000px) {
+            .main-wrapper { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .grid, .grid-3 { grid-template-columns: 1fr; }
+            .full-width, .full-3 { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="container">
+        <span class="version-badge">SELF-OPTIMIZING SYSTEM v2.0</span>
+        <h1>Ironman Prompt Master</h1>
+        <p class="subtitle">
+            Generate prompt High-Agency dengan Engineering Supreme Law, Pipeline 6-Fase,
+            Autonomy Engine, PRD Agent, dan 7 Domain Skill terintegrasi.
+        </p>
+
+        <!-- Row 1: Project Basics -->
+        <div class="grid">
+            <div class="form-group">
+                <label>Nama Proyek</label>
+                <input type="text" id="projName" placeholder="Contoh: LuminaTask">
+            </div>
+            <div class="form-group">
+                <label>Teknologi Utama</label>
+                <select id="stack">
+                    <option value="Next.js App Router + TypeScript">Next.js App Router</option>
+                    <option value="Vite + React + TypeScript">Vite + React</option>
+                    <option value="Node.js + Express + TypeScript">Node.js/Express</option>
+                    <option value="Vanilla HTML/CSS/JS">Vanilla HTML/JS</option>
+                    <option value="Python + FastAPI">Python FastAPI</option>
+                    <option value="Go + Gin/Fiber">Go (Gin/Fiber)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Row 2: Design & Method -->
+        <div class="grid">
+            <div class="form-group">
+                <label>Gaya UI (Taste-Skill)</label>
+                <select id="uiStyle">
+                    <option value="Bento Grid + Glassmorphism">Bento Grid + Glassmorphism</option>
+                    <option value="Minimalist Editorial">Minimalist Editorial</option>
+                    <option value="Industrial Brutalist">Industrial Brutalist</option>
+                    <option value="Sleek Dark Dashboard">Sleek Dark Dashboard</option>
+                    <option value="Custom (deskripsi di bawah)">Custom</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Autonomy Level</label>
+                <select id="autonomyLevel">
+                    <option value="L1 — Assisted (agent suggest, user approve semua)">L1 — Assisted</option>
+                    <option value="L2 — Supervised (agent eksekusi, user review hasil)">L2 — Supervised</option>
+                    <option value="L3 — Autonomous (agent berjalan, user approve milestone)">L3 — Autonomous</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Row 3: Domain Skills Toggle -->
+        <label>Aktifkan Domain Skills</label>
+        <div class="toggle-group" id="skillToggles">
+            <span class="toggle-chip active" data-skill="api-design" onclick="toggleSkill(this)"><span class="check">✓</span> 🌐 API Design</span>
+            <span class="toggle-chip active" data-skill="error-handling" onclick="toggleSkill(this)"><span class="check">✓</span> 🚨 Error Handling</span>
+            <span class="toggle-chip active" data-skill="observability" onclick="toggleSkill(this)"><span class="check">✓</span> 📡 Observability</span>
+            <span class="toggle-chip active" data-skill="data-access" onclick="toggleSkill(this)"><span class="check">✓</span> 🗄️ Data Access</span>
+            <span class="toggle-chip active" data-skill="async-queue" onclick="toggleSkill(this)"><span class="check">✓</span> 📨 Async Queue</span>
+            <span class="toggle-chip" data-skill="prd-agent" onclick="toggleSkill(this)"><span class="check">✓</span> 🧠 PRD Agent</span>
+            <span class="toggle-chip" data-skill="self-optimizing" onclick="toggleSkill(this)"><span class="check">✓</span> ⚡ Self-Optimizing</span>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Row 4: Features -->
+        <div class="grid">
+            <div class="form-group full-width">
+                <label>Deskripsi Fitur & Konteks</label>
+                <textarea id="features" rows="5" placeholder="Apa fungsi utama aplikasi ini? Tuliskan fitur kunci, target user, dan masalah yang diselesaikan."></textarea>
+            </div>
+            <div class="form-group full-width">
+                <label>Instruksi Khusus / Modul Advance</label>
+                <input type="text" id="extra" placeholder="Contoh: integrasi Kafka, Multi-tenant, RBAC, deteksi anomali, dll.">
+            </div>
+        </div>
+
+        <button class="primary" onclick="generatePrompt()">🚀 Generate Ironman Prompt</button>
+
+        <div class="output-container">
+            <div class="output-label">
+                <label>Hasil Prompt [Ironman v6.1 Full-Stack]</label>
+                <button class="copy-btn" onclick="copyPrompt()">📋 Salin ke Clipboard</button>
+            </div>
+            <textarea id="output" readonly placeholder="Prompt akan muncul di sini setelah klik Generate..."></textarea>
+        </div>
+    </div>
+
+    <!-- Side Panel -->
+    <div class="side-panel">
+        <!-- Stats -->
+        <div class="panel-card">
+            <h2>📊 Ironman v6.1 Stats</h2>
+            <div class="stat-grid">
+                <div class="stat-box"><div class="num">5</div><div class="lbl">Autonomy Systems</div></div>
+                <div class="stat-box"><div class="num">7</div><div class="lbl">Domain Skills</div></div>
+                <div class="stat-box"><div class="num">20</div><div class="lbl">Law Sections</div></div>
+                <div class="stat-box"><div class="num">6</div><div class="lbl">Pipeline Phases</div></div>
+            </div>
+        </div>
+
+        <!-- Brainstorming -->
+        <div class="panel-card">
+            <h2>🧠 Quick Ideas</h2>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 14px;">Klik untuk tambahkan ke deskripsi fitur.</p>
+
+            <label style="font-size: 0.7rem; color: var(--accent);">Arsitektur</label>
+            <div style="margin-bottom: 12px;">
+                <span class="idea-chip" onclick="addIdea('Multi-tenant isolation (tenant per schema)')">Multi-tenant</span>
+                <span class="idea-chip" onclick="addIdea('Event-driven architecture (Kafka/Redis Pub-Sub)')">Event-driven</span>
+                <span class="idea-chip" onclick="addIdea('Edge caching + CDN untuk global speed')">Edge Caching</span>
+                <span class="idea-chip" onclick="addIdea('Background jobs dengan Bull/BullMQ + DLQ')">Background Jobs</span>
+            </div>
+
+            <label style="font-size: 0.7rem; color: var(--accent);">UX/UI</label>
+            <div style="margin-bottom: 12px;">
+                <span class="idea-chip" onclick="addIdea('GSAP micro-animations + scroll-driven')">GSAP Motion</span>
+                <span class="idea-chip" onclick="addIdea('Keyboard-first navigation (Cmd+K)')">Cmd+K Menu</span>
+                <span class="idea-chip" onclick="addIdea('Real-time sync via WebSocket')">Real-time Sync</span>
+                <span class="idea-chip" onclick="addIdea('Dark/Light mode toggle dengan smooth transition')">Dark Mode</span>
+            </div>
+
+            <label style="font-size: 0.7rem; color: var(--accent);">Infra & Ops</label>
+            <div>
+                <span class="idea-chip" onclick="addIdea('Docker Compose dev environment lengkap')">Docker Compose</span>
+                <span class="idea-chip" onclick="addIdea('OpenTelemetry tracing + Prometheus metrics')">OTel Tracing</span>
+                <span class="idea-chip" onclick="addIdea('CI/CD GitHub Actions + auto deploy')">CI/CD Pipeline</span>
+                <span class="idea-chip" onclick="addIdea('RBAC dengan permission-based access control')">RBAC</span>
+            </div>
+        </div>
+
+        <!-- Template -->
+        <div class="panel-card">
+            <h2>📝 Template</h2>
+            <button class="copy-btn" style="width: 100%; border-style: dashed; padding: 10px;" onclick="brainstormTemplate()">✨ Isi Template Discovery</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleSkill(el) {
+        el.classList.toggle('active');
+    }
+
+    function getActiveSkills() {
+        return Array.from(document.querySelectorAll('.toggle-chip.active'))
+            .map(el => el.dataset.skill);
+    }
+
+    function addIdea(text) {
+        const area = document.getElementById('features');
+        area.value += (area.value ? '\n- ' : '- ') + text;
+    }
+
+    function brainstormTemplate() {
+        document.getElementById('features').value = `### DISCOVERY & CONTEXT:
+1. MASALAH: [Apa masalah yang diselesaikan?]
+2. TARGET USER: [Siapa penggunanya?]
+3. USP: [Apa yang beda dari kompetitor?]
+4. FITUR KUNCI:
+   - [Fitur A — deskripsi singkat]
+   - [Fitur B — deskripsi singkat]
+   - [Fitur C — deskripsi singkat]
+5. UX STRATEGY:
+   - Dashboard dengan Bento Grid layout
+   - Animasi transisi smooth antar halaman
+   - Keyboard shortcuts untuk power users
+6. DATA MODEL:
+   - [Entity utama dan relasinya]`;
+    }
+
+    function generatePrompt() {
+        const name = document.getElementById('projName').value || '[Nama Proyek]';
+        const stack = document.getElementById('stack').value;
+        const ui = document.getElementById('uiStyle').value;
+        const autonomy = document.getElementById('autonomyLevel').value;
+        const features = document.getElementById('features').value || 'Fitur dasar aplikasi.';
+        const extra = document.getElementById('extra').value;
+        const skills = getActiveSkills();
+
+        // Build skill rules
+        let skillRules = '';
+
+        if (skills.includes('api-design')) {
+            skillRules += `
+6. **API Design (skills/api-design):**
+   - Response shape WAJIB: \`{ data, meta }\` untuk sukses, \`{ error, meta }\` untuk gagal.
+   - URL convention: \`/api/v1/{resource}\`, plural, kebab-case.
+   - Pagination WAJIB untuk semua list endpoint (page, limit, sort, order).
+   - DILARANG return 200 untuk error.`;
+        }
+
+        if (skills.includes('error-handling')) {
+            skillRules += `
+7. **Error Handling (skills/error-handling):**
+   - Taksonomi: DomainError→422, InfraError→503, AuthError→401.
+   - Gunakan typed errors (ValidationError, NotFoundError, ConflictError).
+   - Centralized error handler middleware — DILARANG try-catch per route.
+   - DILARANG expose stack trace ke client di production.`;
+        }
+
+        if (skills.includes('observability')) {
+            skillRules += `
+8. **Observability (skills/observability):**
+   - Structured JSON logging dengan field WAJIB: timestamp, level, traceId, module, action, message.
+   - Propagasi traceId via header x-trace-id (AsyncLocalStorage).
+   - Health check: /health/live (liveness) + /health/ready (readiness + dependency check).
+   - DILARANG log password, token, PII.`;
+        }
+
+        if (skills.includes('data-access')) {
+            skillRules += `
+9. **Data Access (skills/data-access):**
+   - ★ Transaction WAJIB di SERVICE layer, BUKAN di repository.
+   - Repository menerima \`tx\` parameter untuk transaction composition.
+   - DILARANG SELECT * — gunakan select eksplisit.
+   - WAJIB index untuk kolom di WHERE/JOIN/ORDER BY.
+   - HINDARI N+1 query — gunakan include/eager loading.`;
+        }
+
+        if (skills.includes('async-queue')) {
+            skillRules += `
+10. **Async Queue (skills/async-queue):**
+   - Operasi > 500ms WAJIB async: return 202 Accepted + job ID.
+   - Idempotency key WAJIB untuk mencegah duplikasi.
+   - Retry: exponential backoff (1s→2s→4s→8s→16s), max 5 attempts.
+   - Dead Letter Queue WAJIB untuk setiap queue. Monitor DLQ > 0.`;
+        }
+
+        if (skills.includes('prd-agent')) {
+            skillRules += `
+11. **PRD Agent v2.0 (skills/prd-agent):**
+   - Jalankan PRD Discovery: tanyakan 5-7 pertanyaan sebelum menulis PRD.
+   - Generate Lean Canvas + JTBD secara otomatis.
+   - Living Validator: cek compliance PRD di setiap task completion.
+   - Simpan semua keputusan PRD ke MemPalace.`;
+        }
+
+        if (skills.includes('self-optimizing')) {
+            skillRules += `
+12. **Self-Optimizing Engine (AUTONOMY.md System 5):**
+   - Untuk task M/L: generate 2-3 strategy berbeda.
+   - Implementasi dan test setiap strategy.
+   - Score: Correctness(30%) + Performance(25%) + Maintainability(25%) + Alignment(15%) + Simplicity(5%).
+   - Pilih strategy terbaik + jelaskan KENAPA.
+   - Catat hasil ke GEP → update auto-rules.`;
+        }
+
+        const prompt = `### 🦾 IRONMAN v6.1 — FULL SYSTEM ACTIVATION
+
+Inisiasi proyek '${name}' dengan Ironman v6.1 Self-Optimizing System.
+Level otonomi: ${autonomy}.
+Patuhi Engineering Supreme Law v3.0, Pipeline 6-Fase, dan Autonomy Engine v2.0.
+
+---
+
+### 🧬 PROYEK OVERVIEW
+${features}
+
+### 🛠️ STACK & ARSITEKTUR
+- **Core Stack:** ${stack}
+- **UI Architecture:** Taste-Skill (${ui})
+- **Autonomy:** ${autonomy}
+- **Evolution:** GEP + MemPalace + Auto-Rules
+${extra ? `- **Kebutuhan Khusus:** ${extra}` : ''}
+
+---
+
+### 🛡️ OPERATIONAL RULES (MANDATORY — ENGINEERING SUPREME LAW v3.0)
+
+1. **Bahasa Indonesia Enforcement (🇮🇩):**
+   - Seluruh interaksi, dokumentasi, dan penjelasan dalam Bahasa Indonesia.
+   - Syntax kode tetap bahasa pemrograman asli.
+
+2. **Engineering Supreme Law (WAJIB PATUHI):**
+   - HUKUM 1: Satu modul = satu domain = satu alasan berubah.
+   - HUKUM 2: Bergantung pada abstraksi, bukan implementasi konkret.
+   - HUKUM 3: Gagal secara lokal. Satu modul tidak boleh meruntuhkan sistem.
+   - Max 300 baris/file, max 30 baris/fungsi, max 120 karakter/baris.
+   - Clean Architecture: Controller(tipis) → Service(logic) → Repository(DB).
+   - ★ Long-term Maintainability > Short-term Fix.
+
+3. **Product Lifecycle Pipeline (DILARANG LONCAT FASE):**
+   - Fase 1: PRD Discovery (PRD Agent v2.0)
+   - Fase 2: UX/Flow Design
+   - Fase 3: Task Breakdown
+   - Fase 4: Development (Ironman + Engineering Law)
+   - Fase 5: QA & Testing (70% unit / 20% integration / 10% E2E)
+   - Fase 6: Security Audit & Deploy
+
+4. **Autonomy Engine (5 Sistem Aktif):**
+   - System 1: Self-Planning — proaktif deteksi error pattern & suggest perbaikan.
+   - System 2: Architecture Evolution — auto-suggest monolith→microservice, bottleneck→cache.
+   - System 3: GEP MAX — setiap error → auto-generate rule baru → MemPalace.
+   - System 4: Autonomous Loop — IDE→BUILD→MONITOR→LEARN→IMPROVE.
+   - System 5: Self-Optimizing — GENERATE→MULTI-STRATEGY→TEST→SCORE→SELECT→EVOLVE.
+
+5. **High-End UX/UI (Anti-Generic):**
+   - DILARANG desain generik atau Tailwind default tanpa kustomisasi.
+   - WAJIB: Smooth Gradients, Glassmorphism, Typographic Contrast, GSAP Micro-animations.
+   - Hardware acceleration (will-change) untuk animasi berat.
+${skillRules}
+
+---
+
+### 🧠 SELF-EVOLUTION & MEMORY
+
+- **GEP:** Catat kegagalan ke assets/gep/events.jsonl. Ekstrak keberhasilan menjadi Genes.
+- **MemPalace:** Simpan keputusan arsitektur, auto-rules, dan konteks proyek untuk lintas sesi.
+- **Auto-Rules:** Baca MemPalace room "auto-rules" di awal sesi. Terapkan tanpa diminta.
+
+---
+
+### 🚀 NEXT STEP:
+Mulai dari **Fase 1: PRD Discovery**. Tanyakan 5-7 pertanyaan kritis tentang proyek ini, lalu buatkan PRD pertama dengan Lean Canvas + JTBD dalam Bahasa Indonesia.`;
+
+        document.getElementById('output').value = prompt;
+    }
+
+    function copyPrompt() {
+        const output = document.getElementById('output');
+        output.select();
+        navigator.clipboard.writeText(output.value).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            const orig = btn.textContent;
+            btn.textContent = '✅ Tersalin!';
+            setTimeout(() => btn.textContent = orig, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
