@@ -150,6 +150,35 @@ ZERO horizontal scroll      Plan WAJIB sebelum coding
 
 ---
 
+## 🔄 Product Lifecycle Pipeline
+
+> Dokumen lengkap: [`PIPELINE.md`](PIPELINE.md)
+
+```
+[USER IDEA]
+     ↓
+FASE 1 — PRD Agent         → Menghasilkan: prd.md
+     ↓
+FASE 2 — UX/Flow Agent     → Menghasilkan: ux-flow.md
+     ↓
+FASE 3 — Task Breakdown    → Menghasilkan: task-breakdown.md
+     ↓
+FASE 4 — Ironman Dev       → Menghasilkan: source code + tests
+     ↓
+FASE 5 — QA Agent          → Menghasilkan: qa-report.md
+     ↓
+FASE 6 — Security & Deploy → Menghasilkan: deploy-report.md
+     ↓
+[PRODUCTION-READY] 🎉
+```
+
+**Aturan Pipeline:**
+- Setiap fase menghasilkan artefak yang menjadi input fase berikutnya
+- Dilarang loncat fase — harus berurutan
+- Setiap fase punya Quality Gate yang harus passed sebelum lanjut
+
+---
+
 ## 🧩 Platform Architecture
 
 ```
@@ -193,6 +222,7 @@ ZERO horizontal scroll      Plan WAJIB sebelum coding
 ironman/
 ├── SKILL.md                  ← Entry point skill utama (19 domain)
 ├── ENGINEERING_LAW.md        ← ⚖️ Engineering Supreme Law v3.0
+├── PIPELINE.md               ← 🔄 Product Lifecycle Pipeline v1.0
 ├── README.md                 ← Dokumentasi ini
 ├── package.json              ← NPM package config
 ├── LICENSE                   ← MIT License
@@ -216,6 +246,7 @@ ironman/
 | **Engineering Supreme Law** | 20 section hukum coding absolut | ✅ |
 | **MemPalace MCP** | Long-term memory & knowledge graph untuk agen AI | ✅ |
 | **Evolver (GEP)** | Self-evolution engine: belajar dari kegagalan | ✅ |
+| **Product Pipeline** | 6 fase lifecycle: Idea → PRD → UX → Tasks → Dev → Deploy | ✅ |
 | **Prompt Master** | HTML tool untuk generate prompt High-Agency | Manual |
 
 ---

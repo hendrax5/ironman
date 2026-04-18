@@ -22,6 +22,11 @@ version: "6.1.0"
 > Configuration, Deployment, UI/UX, Self-Evolution (GEP), Hard Constraints, dan Quality Gate.
 > **JIKA SATU PUN DILANGGAR → STOP. REFACTOR. BARU LANJUT.**
 >
+> 🔄 **PRODUCT LIFECYCLE PIPELINE v1.0 — DARI IDE SAMPAI PRODUCTION**
+> Untuk proyek/fitur baru, ikuti `PIPELINE.md`:
+> `User Idea → PRD Agent → UX/Flow Agent → Task Breakdown → Ironman Dev → QA → Security & Deploy`
+> Setiap fase menghasilkan artefak wajib. Dilarang loncat fase.
+>
 > 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
 > Semua agen (Antigravity, Claude Code, Cursor) WAJIB memprioritaskan penggunaan Bahasa Indonesia yang profesional dan teknis dalam setiap interaksi, pembuatan dokumen, dan penjelasan arsitektur.
 
