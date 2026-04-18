@@ -6,3 +6,8 @@ output-skill: Prevents AI from being lazy, skipping code blocks, or using placeh
 minimalist-skill: Enforces clean, editorial-style interfaces (Notion/Linear style) with strict monochrome palettes.
 brutalist-skill: Raw mechanical interfaces, Swiss typography, extreme scale contrast. (Beta)
 stitch-skill: Google Stitch-compatible semantic design rules for premium AI UI generation.
+
+
+cache: Cache strategy skill — TTL matrix, namespace format, cache patterns, invalidation rules.
+migration: Schema migration safety — naming convention, immutability, zero-downtime patterns.
+network-intelligence: Network ops rules — RTBH safety, DDoS escalation matrix, correlation enforcement.

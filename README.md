@@ -1,29 +1,26 @@
-# 🦾 Ironman v6.1 — AI Skill: Fullstack · DevOps · AI/ML · UX/UI · PDCA · Evolution
-
-> **1 skill. 19 domain. Zero switching.**  
+> **1 skill. 22 domain. Zero switching.**  
 > Brainstorming → fullstack dev → Docker → Kubernetes → SaaS platform → full observability → event-driven → network intelligence → AI/ML Ops → UX/UI (Taste) → PDCA Methodology → Self-Evolution (GEP) — semua dalam satu workflow.
 > 
 > 🇮🇩 **BAHASA PRIORITAS: INDONESIA**
 > Agen secara sistematis akan selalu menjawab, mendokumentasikan, dan merancang dalam Bahasa Indonesia.
 
-[![Version](https://img.shields.io/badge/version-6.1.0-blue)](https://github.com/hendrax5/ironman)
+[![Version](https://img.shields.io/badge/version-6.2.0-blue)](https://github.com/hendrax5/ironman)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Law: Supreme v3.0](https://img.shields.io/badge/Law-Engineering%20Supreme%20v3.0-red)](ENGINEERING_LAW.md)
 
 ---
 
-## ⚡ Install (1 command)
-
 ```bash
 npx github:hendrax5/ironman
 ```
+
+**PENTING: CARA UPDATE UNTUK YANG SUDAH INSTALL**
+Jika kamu sudah pernah menginstall versi sebelumnya, cukup jalankan kembali perintah `npx` di atas. Installer akan secara otomatis menimpa (overwrite) file SKILL.md dan mengupdate environment-mu ke versi terbaru tanpa merusak konfigurasi MCP yang sudah ada.
 
 Installer otomatis melakukan:
 1. **MemPalace MCP** — Clone, install dependensi, dan register sebagai MCP server
 2. **Ironman Skill** — Deploy ke Antigravity, Claude Code, dan project-level `.agents/`
 3. **Engineering Supreme Law** — Menyertakan `ENGINEERING_LAW.md` sebagai hukum wajib
-
-### Manual Install
 
 | Tool | Cara |
 |------|------|
@@ -35,13 +32,10 @@ Installer otomatis melakukan:
 
 ---
 
-## ⚖️ Engineering Supreme Law v3.0
-
 > **BERLAKU UNTUK: semua code generation, semua agent, semua task.**
 > Dokumen lengkap: [`ENGINEERING_LAW.md`](ENGINEERING_LAW.md)
 
 ### Tiga Hukum Utama (Tidak Boleh Dilanggar)
-
 | # | Hukum | Deskripsi |
 |---|-------|-----------|
 | 1 | **Single Responsibility** | Satu modul = satu domain = satu alasan untuk berubah |
@@ -49,7 +43,6 @@ Installer otomatis melakukan:
 | 3 | **Fault Isolation** | Gagal secara lokal. Satu modul tidak boleh meruntuhkan sistem |
 
 ### 20 Section Hukum
-
 | Section | Topik | Inti Aturan |
 |---------|-------|-------------|
 | 0 | Tiga Hukum Utama | SRP, DIP, Fault Isolation |
@@ -74,7 +67,6 @@ Installer otomatis melakukan:
 | 19 | Quality Gate | Checklist wajib sebelum task dianggap selesai |
 
 ### Hard Limits (Quick Reference)
-
 ```
 Maks 300 baris/file          Maks 30 baris/fungsi
 Maks 4 parameter/fungsi     Maks 3 level nesting
@@ -84,8 +76,7 @@ ZERO horizontal scroll      Plan WAJIB sebelum coding
 
 ---
 
-## 🗺️ Domain Coverage (20 Domain)
-
+## 🗺️ Domain Coverage (22 Domain)
 | # | Domain | Cakupan |
 |---|---------|---------| 
 | 0 | 🧠 Brainstorming | Architecture decision, tech evaluation, network design thinking |
@@ -108,11 +99,13 @@ ZERO horizontal scroll      Plan WAJIB sebelum coding
 | 17 | 🔄 PDCA Vibecoding | Bkit: Plan-Do-Check-Act forced workflow, Living feature tree, architecture guard |
 | 18 | 🧬 Self-Evolution (GEP) | Evolver: Log analysis, Gene & Capsule management, auditable evolution events |
 | 19 | 🇮🇩 Language Enforcement | Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
+| 20 | 🗄️ Cache Strategy | TTL matrix, namespace convention, cache patterns, invalidation, multi-layer |
+| 21 | 🔄 Schema Migration | Naming convention, immutability, zero-downtime, expand-contract, Alembic/Prisma |
+| 22 | 🛡️ Network Ops Rules | RTBH safety, DDoS escalation, correlation enforcement, IBN compilation rules |
 
 ---
 
 ## 🚀 Contoh Penggunaan
-
 ```
 # Brainstorming
 "Brainstorm arsitektur untuk SaaS monitoring platform dengan 500 tenant"
@@ -151,7 +144,6 @@ ZERO horizontal scroll      Plan WAJIB sebelum coding
 ---
 
 ## 🔄 Product Lifecycle Pipeline
-
 > Dokumen lengkap: [`PIPELINE.md`](PIPELINE.md)
 
 ```
@@ -178,8 +170,6 @@ FASE 6 — Security & Deploy → Menghasilkan: deploy-report.md
 - Setiap fase punya Quality Gate yang harus passed sebelum lanjut
 
 ---
-
-## 🧩 Platform Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -222,7 +212,6 @@ FASE 6 — Security & Deploy → Menghasilkan: deploy-report.md
 ---
 
 ## 📁 Struktur Repositori
-
 ```
 ironman/
 ├── SKILL.md                  ← Entry point skill utama (19 domain)
@@ -247,6 +236,12 @@ ironman/
 │   │   └── SKILL.md          ← 🚨 Error taxonomy, centralized handler
 │   ├── data-access/
 │   │   └── SKILL.md          ← 🗄️ Transaction boundary, repository, query
+│   ├── cache/
+│   │   └── SKILL.md          ← 🗄️ Cache Strategy: TTL, namespace, invalidation
+│   ├── migration/
+│   │   └── SKILL.md          ← 🔄 Schema Migration: Naming, zero-downtime, templates
+│   ├── network-intelligence/
+│   │   └── SKILL.md          ← 🛡️ Network Ops Rules: RTBH, DDoS, correlation
 │   └── evolver/
 │       └── SKILL.md          ← 🧬 GEP Self-Evolution module
 └── assets/
@@ -257,7 +252,6 @@ ironman/
 ---
 
 ## 🔗 Ekosistem Terintegrasi
-
 | Komponen | Fungsi | Auto-Install? |
 |----------|--------|:---:|
 | **Ironman Skill** | 19 domain engineering dalam satu file | ✅ |
@@ -272,12 +266,14 @@ ironman/
 | **Async Queue** | Idempotency, DLQ, retry policy, pola 202 Accepted | ✅ |
 | **Error Handling** | Taksonomi error, centralized handler, mapping HTTP status | ✅ |
 | **Data Access** | Transaction boundary (di service!), repository pattern, query optimization | ✅ |
+| **Cache Strategy** | TTL matrix, cache patterns (Aside/Write-Through), stampede protection | ✅ |
+| **Schema Migration** | Zero-downtime expand-contract, Alembic/Prisma template, immutable files | ✅ |
+| **Network Ops Rules** | RTBH safety bounds, DDoS escalation L1-L5, correlation enforcement | ✅ |
 | **Prompt Master** | HTML tool untuk generate prompt High-Agency | Manual |
 
 ---
 
 ## 📦 Package Info
-
 ```json
 {
   "name": "ironman",
@@ -286,5 +282,5 @@ ironman/
 ```
 
 ## 📄 License
-
 MIT © hendrax5
+
