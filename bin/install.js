@@ -27,8 +27,19 @@ function installSkill(dest) {
   fs.copyFileSync(SKILL_FILE, path.join(dest, 'SKILL.md'));
   
   if (fs.existsSync(sourceSkillsDir)) {
-      // Logic to copy sub-skills (evolver, bkit, etc)
-      // For simplicity, we just copy the main SKILL.md as the primary entry point
+      const copyRecursiveSync = function(src, dst) {
+          if (!fs.existsSync(dst)) fs.mkdirSync(dst, { recursive: true });
+          fs.readdirSync(src).forEach(file => {
+              const srcFile = path.join(src, file);
+              const destFile = path.join(dst, file);
+              if (fs.statSync(srcFile).isDirectory()) {
+                  copyRecursiveSync(srcFile, destFile);
+              } else {
+                  fs.copyFileSync(srcFile, destFile);
+              }
+          });
+      };
+      copyRecursiveSync(sourceSkillsDir, path.join(dest, 'skills'));
   }
 }
 
@@ -42,8 +53,9 @@ function setupMemPalace() {
         console.log('  ✅ MemPalace already present.');
     }
 
-    console.log('  🛠️  Installing MemPalace dependencies...');
-    execSync(`cd "${MEMPALACE_DEST}" && npm install`, { stdio: 'inherit' });
+    // We skip npm install because MemPalace is now a Python/uv MCP server
+    // or already managed separately.
+    console.log('  ✅ MemPalace dependencies handled separately.');
 
     // Register to Claude Desktop Config if on Windows
     const configPath = path.join(process.env.APPDATA, 'Claude', 'claude_desktop_config.json');
@@ -70,7 +82,7 @@ function setupMemPalace() {
 }
 
 function run() {
-  console.log('\n🦾 Ironman v6.1 Full-Stack AI Installer\n');
+  console.log('\n🦾 Ironman v6.2 Full-Stack AI Installer\n');
 
   try {
       setupMemPalace();
@@ -96,7 +108,7 @@ function run() {
   console.log('\n' + '─'.repeat(60));
 
   if (installed.length > 0) {
-    console.log(`\n✨ Ironman v6.1 environment is ready!`);
+    console.log(`\n✨ Ironman v6.2 environment is ready!`);
     console.log('\nWhat happened:');
     console.log('  1. MemPalace MCP was installed and registered.');
     console.log('  2. Ironman Skill was deployed to your AI tools.');
