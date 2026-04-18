@@ -33,71 +33,44 @@ ATURAN UTAMA:
   - Gunakan MemPalace untuk menyimpan keputusan penting lintas fase.
 
 ================================================================
-FASE 1 — PRD AGENT (Discovery & Requirements)
+FASE 1 — PRD AGENT v2.0 (AI-First Dynamic PRD System)
 ================================================================
 
-TUJUAN: Mengubah ide mentah menjadi dokumen kebutuhan yang jelas.
+TUJUAN: Mengubah ide mentah menjadi PRD HIDUP melalui dialog interaktif.
+        Ini BUKAN template kosong. Ini adalah sistem yang berpikir.
+
+SISTEM: skills/prd-agent/SKILL.md (7 modul terintegrasi)
 
 INPUT:
-  - Ide atau masalah dari user (bisa berupa kalimat sederhana)
+  - Ide atau masalah dari user (bisa berupa 1 kalimat sederhana)
 
-PROSES:
-  1. Klarifikasi masalah dengan pertanyaan terstruktur:
-     - Siapa target pengguna?
-     - Masalah apa yang diselesaikan?
-     - Apa metrik keberhasilan?
-     - Apa batasan teknis dan bisnis?
+PROSES (dijalankan otomatis oleh PRD Agent):
+  1. DISCOVERY ENGINE — Dialog interaktif 5-7 pertanyaan (satu per satu)
+  2. STRATEGY BUILDER — Analisis otomatis (Lean Canvas, JTBD, OST)
+  3. PRIORITIZATION ENGINE — Impact vs Effort scoring otomatis
+  4. PRD GENERATOR — Dokumen hidup dengan Health Score
+  5. MEMORY SYNC — Simpan semua keputusan ke MemPalace
 
-  2. Analisis kompetitor dan pendekatan yang sudah ada
+FITUR LIVING SYSTEM (berjalan selama development):
+  6. LIVING VALIDATOR — Cek kode vs PRD setiap task selesai
+     → Deteksi scope creep, missing features, dan deviasi
+     → Auto-update PRD jika scope berubah (dengan changelog)
+  7. EVOLUTION TRACKER — Catat pelajaran ke GEP
+     → Ekstrak Gene dari pola PRD yang sukses
 
-  3. Definisikan scope:
-     - Fitur MVP (Minimum Viable Product)
-     - Fitur fase 2 (nice-to-have)
-     - Fitur yang BUKAN scope (out-of-scope)
-
-  4. Tulis PRD (Product Requirements Document)
-
-ARTEFAK OUTPUT — prd.md:
-  # PRD: [Nama Produk/Fitur]
-
-  ## Ringkasan Eksekutif
-  [1-2 paragraf: apa, untuk siapa, mengapa]
-
-  ## Masalah & Peluang
-  - Masalah utama yang diselesaikan
-  - Dampak jika tidak diselesaikan
-
-  ## Target Pengguna
-  - Persona 1: [deskripsi]
-  - Persona 2: [deskripsi]
-
-  ## Fitur & Requirements
-  ### MVP (Fase 1)
-  - [F-001] Fitur A — deskripsi, prioritas: TINGGI
-  - [F-002] Fitur B — deskripsi, prioritas: TINGGI
-
-  ### Fase 2
-  - [F-010] Fitur X — deskripsi, prioritas: SEDANG
-
-  ### Out of Scope
-  - [Fitur yang sengaja TIDAK dimasukkan + alasan]
-
-  ## Metrik Keberhasilan
-  - KPI 1: [target terukur]
-  - KPI 2: [target terukur]
-
-  ## Batasan & Asumsi
-  - Teknis: [stack, infrastruktur]
-  - Bisnis: [budget, timeline]
-
-  ## Risiko
-  - [R-001] Risiko A — mitigasi: [strategi]
+ARTEFAK OUTPUT: docs/00-prd/{nama-fitur}.prd.md
+  - Dokumen yang sudah TERISI (bukan kosong)
+  - Memiliki PRD Health Score
+  - Memiliki Changelog yang auto-update
+  - Tersimpan di MemPalace untuk akses lintas sesi
 
 QUALITY GATE FASE 1:
-  [ ] PRD memiliki minimal 3 fitur MVP yang terukur
-  [ ] Target pengguna terdefinisi dengan jelas
-  [ ] Out-of-scope terdokumentasi
-  [ ] Metrik keberhasilan bisa diukur (bukan subjektif)
+  [ ] PRD memiliki minimal 3 fitur MVP dengan priority score
+  [ ] Target pengguna terdefinisi dengan persona
+  [ ] Out-of-scope terdokumentasi dengan alasan
+  [ ] Metrik keberhasilan terukur (bukan subjektif)
+  [ ] PRD Health Score >= 70%
+  [ ] Semua keputusan tersimpan di MemPalace
   [ ] User sudah review dan setuju dengan PRD
 
 JIKA BELUM PASSED → REVISI PRD. DILARANG LANJUT KE FASE 2.
