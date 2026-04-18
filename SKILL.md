@@ -6,12 +6,10 @@ risk: safe
 source: custom
 tags: "[brainstorming, architecture, fullstack, docker, kubernetes, saas, opentelemetry, kafka, network, security, devops, ux, ui, bkit, pdca, vibecoding, evolver, gep, evolution]"
 date_added: "2026-04-17"
-version: "6.1.0"
+version: "6.2.0"
 ---
 
-# 🦾 Ironman v6.1 — Fullstack · DevOps · AI/ML · UX/UI · PDCA · Evolution
-
-> **1 skill. 19 domain. Zero switching.**
+> **1 skill. 22 domain. Zero switching.**
 > Platform engineering komprehensif dari infrastruktur hingga estetika, metodologi, dan kemampuan evolusi mandiri (Self-Evolution).
 >
 > ⚖️ **ENGINEERING SUPREME LAW v3.0 — BERLAKU TANPA PENGECUALIAN**
@@ -40,8 +38,6 @@ version: "6.1.0"
 
 ---
 
-## 🗺️ Domain Coverage
-
 | # | Domain | Cakupan Utama |
 |---|---------|--------------|
 | 0 | 🧠 **Brainstorming** | Architecture decision, tech evaluation, network design thinking |
@@ -64,8 +60,9 @@ version: "6.1.0"
 | 17 | 🔄 **PDCA Vibecoding** | Bkit methodology: Plan-Do-Check-Act forced workflow, Living feature tree, architecture guard |
 | 18 | 🧬 **Self-Evolution (GEP)**| Evolver integration: Log analysis, Gene & Capsule management, auditable evolution events |
 | 19 | 🇮🇩 **Language Enforcement**| Wajib Bahasa Indonesia dalam seluruh proses penjelasan dan dokumentasi |
-
-### Routing Otomatis
+| 20 | 🗄️ **Cache Strategy** | TTL matrix, namespace convention, cache patterns, invalidation, multi-layer |
+| 21 | 🔄 **Schema Migration** | Naming convention, immutability, zero-downtime, expand-contract, Alembic/Prisma |
+| 22 | 🛡️ **Network Ops Rules** | RTBH safety, DDoS escalation, correlation enforcement, IBN compilation rules |
 
 | Kata kunci | Domain aktif |
 |---|---|
@@ -85,14 +82,13 @@ version: "6.1.0"
 | `gnmi`, `streaming telemetry`, `correlation engine`, `netflow anomaly`, `ddos`, `bgp flowspec`, `rtbh`, `auto remediation`, `intent-based`, `ibn` | Network Intelligence |
 | `docker-compose generate`, `auto-docs`, `compose template`, `.env.example`, `default credentials`, `docker readme`, `backup docker` | Docker Compose Auto-Docs |
 | `mlops`, `mlflow`, `model serving`, `training pipeline`, `gpu`, `triton`, `torchserve`, `feature store`, `model monitoring`, `data drift`, `ml ci/cd` | AI/ML Ops |
+| `cache`, `redis`, `ttl`, `invalidation`, `cache-aside`, `write-through`, `stampede` | Cache Strategy |
+| `migration`, `schema migration`, `alembic`, `prisma migrate`, `flyway`, `alter table`, `down()` | Schema Migration |
+| `rtbh safety`, `ddos escalation`, `correlation rules`, `ibn rules`, `network ops` | Network Ops Rules |
 
 ---
 
-## 0️⃣ Brainstorming Mode
-
 > Aktif saat user ingin **ideasi, merancang arsitektur, memilih teknologi, atau mengevaluasi opsi** sebelum eksekusi.
-
-### Framework Brainstorming
 
 #### 1. Architecture Decision
 ```
@@ -139,8 +135,6 @@ version: "6.1.0"
 - ✅ Tawarkan lanjut ke implementasi setelah brainstorm
 
 ---
-
-## 1️⃣ Full-Stack Development
 
 ### Universal Architecture
 ```
@@ -203,8 +197,6 @@ CREATE INDEX idx_items_tenant ON items(tenant_id, created_at DESC);
 
 ---
 
-## 2️⃣ Docker & Containers
-
 ### Multi-Stage Dockerfile (Universal)
 ```dockerfile
 FROM node:22-alpine AS deps
@@ -238,9 +230,6 @@ USER nonroot                          # never root
 
 ---
 
-## 3️⃣ Network Multi-Vendor
-
-### Config Patterns per Vendor
 ```cisco
 ! Cisco IOS/IOS-XE
 interface GigabitEthernet0/1
@@ -261,8 +250,6 @@ set routing-options static route 0.0.0.0/0 next-hop 203.0.113.2
 ```
 
 ---
-
-## 4️⃣ Network Automation
 
 ### Netmiko Universal
 ```python
@@ -305,8 +292,6 @@ device.close()
 
 ---
 
-## 5️⃣ Network Monitoring
-
 ### Prometheus + SNMP Exporter
 ```yaml
 # prometheus.yml
@@ -332,8 +317,6 @@ nfdump -R /data/netflow 'src ip 10.0.0.0/8' -o extended
 
 ---
 
-## 6️⃣ Network Security
-
 ### Packet Analysis
 ```bash
 # tcpdump — one-liners
@@ -357,8 +340,6 @@ r = session.post(f"https://{fw_ip}/api/v2/cmdb/firewall/policy",
 ```
 
 ---
-
-## 7️⃣ App Security
 
 ### OWASP Top 10 Checklist (per endpoint)
 ```
@@ -386,9 +367,6 @@ const verifyToken = (req, res, next) => {
 
 ---
 
-## 8️⃣ CI/CD & Deploy
-
-### GitHub Actions — Full Pipeline
 ```yaml
 name: CI/CD
 on: [push]
@@ -419,8 +397,6 @@ jobs:
 ```
 
 ---
-
-## 9️⃣ SaaS Platform Layer
 
 ### Tenant Isolation Strategy
 ```
@@ -497,8 +473,6 @@ GROUP BY device_id, window_end;
 ```
 
 ---
-
-## 1️⃣0️⃣ Full Observability Stack
 
 ### OpenTelemetry SDK Setup
 ```python
@@ -610,8 +584,6 @@ Alert (Alertmanager)
 ```
 
 ---
-
-## 1️⃣1️⃣ Kubernetes & Scaling
 
 ### K8s Manifests Wajib (Production)
 ```yaml
@@ -725,8 +697,6 @@ Message queue       → Kafka partition = parallel consumers
 
 ---
 
-## 1️⃣2️⃣ Event-Driven Architecture
-
 ### Kafka Topology
 ```
 Topics:
@@ -792,8 +762,6 @@ def handle_message(msg):
 ```
 
 ---
-
-## 1️⃣3️⃣ Network Intelligence & Defense
 
 ### 🔭 Streaming Telemetry (gNMI)
 ```python
@@ -987,8 +955,6 @@ class IBNEngine:
 
 ---
 
-## 1️⃣4️⃣ Docker Compose Auto-Docs
-
 > Aktif saat user ingin **auto-generate docker-compose.yml lengkap**, termasuk `.env.example`, README section, default credentials, dan health check template.
 
 ### Auto-Generate docker-compose.yml (Full Stack)
@@ -1166,8 +1132,6 @@ echo "✅ Backup pushed to GitHub: ${DATE}"
 
 ---
 
-## 1️⃣5️⃣ AI/ML Ops
-
 > Aktif saat user ingin **build ML pipeline, serve model ke production, tracking experiment, atau manage GPU resources**.
 
 ### Model Serving — FastAPI + Torch
@@ -1334,7 +1298,6 @@ jobs:
         run: python scripts/register_model.py
 ```
 
-### AI/ML Ops Checklist
 ```
 ✅ Model versioning (MLflow / DVC / W&B)
 ✅ Experiment tracking wajib — no "training in the dark"
@@ -1349,8 +1312,6 @@ jobs:
 
 ---
 
-## 🔑 Global Rules (All Domains)
-
 ```
 ✅ Selalu tanya konteks spesifik jika tidak jelas (lingkungan, skala, vendor, budget)
 ✅ Prioritaskan solusi production-ready, bukan proof-of-concept
@@ -1360,3 +1321,4 @@ jobs:
 ❌ Jangan rekomendasikan teknologi di luar domain ini tanpa alasan jelas
 ❌ Jangan buat kode tanpa context: selalu tanyakan target vendor/platform
 ```
+
