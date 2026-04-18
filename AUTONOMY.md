@@ -1,11 +1,11 @@
 ================================================================
 [IRONMAN AUTONOMY ENGINE]
-Version: 1.0 — SELF-THINKING AI ENGINEERING PARTNER
+Version: 2.0 — SELF-OPTIMIZING AI ENGINEERING PARTNER
 ================================================================
 
 BERLAKU UNTUK: semua proyek yang menggunakan Ironman v6.1+
-Dokumen ini mendefinisikan 4 sistem kecerdasan otonom yang
-memungkinkan Ironman BERPIKIR, BELAJAR, dan BERTINDAK sendiri.
+Dokumen ini mendefinisikan 5 sistem kecerdasan otonom yang
+memungkinkan Ironman BERPIKIR, BELAJAR, MEMBANDINGKAN, dan BERTINDAK sendiri.
 
 PRINSIP UTAMA:
   ★ LONG-TERM MAINTAINABILITY > SHORT-TERM FIX
@@ -341,12 +341,284 @@ SAFETY GUARDRAILS:
   - Jika confidence < 70% → turunkan level otonomi → tanya user
 
 ================================================================
+SYSTEM 5 — SELF-OPTIMIZING ENGINE
+================================================================
+
+TUJUAN: Mengubah Ironman dari "self-learning" (coba 1, belajar dari
+        gagal) menjadi "self-optimizing" (coba BANYAK, bandingkan,
+        pilih TERBAIK, belajar KENAPA terbaik).
+
+FLOW LENGKAP:
+  PRD → STRATEGY → MULTI-IMPLEMENT → TEST → SCORE → SELECT → DEPLOY
+    → GEP LEARN → UPDATE RULE → (loop kembali)
+
+----------------------------------------------------------------
+LANGKAH 1 — GENERATE (Dari PRD/Task)
+----------------------------------------------------------------
+
+  Input: Satu task dari task-breakdown.md
+  Proses:
+    1. Baca task requirements
+    2. Baca auto-rules dan Gene dari MemPalace
+    3. Baca Engineering Supreme Law constraints
+    4. Identifikasi bahwa task ini memiliki > 1 pendekatan valid
+
+  KRITERIA MULTI-STRATEGY:
+    Task WAJIB di-multi-strategy jika:
+    - Melibatkan pilihan arsitektur (SQL vs NoSQL, REST vs GraphQL)
+    - Melibatkan pilihan algoritma (sorting, searching, caching)
+    - Melibatkan trade-off performa vs readability
+    - Melibatkan trade-off complexity vs flexibility
+
+    Task TIDAK perlu multi-strategy jika:
+    - CRUD sederhana dengan pola standar
+    - Bug fix dengan solusi jelas
+    - Konfigurasi atau setup
+
+----------------------------------------------------------------
+LANGKAH 2 — MULTI-STRATEGY GENERATION
+----------------------------------------------------------------
+
+  Agent WAJIB menghasilkan 2-3 pendekatan berbeda:
+
+  FORMAT:
+    STRATEGY A — {nama} (Rekomendasi)
+      Pendekatan: {deskripsi teknis singkat}
+      Trade-off: {apa yang dikorbankan}
+      Cocok untuk: {kondisi ideal}
+      Estimasi: complexity={L/M/H}, performa={L/M/H}
+
+    STRATEGY B — {nama}
+      Pendekatan: {deskripsi teknis singkat}
+      Trade-off: {apa yang dikorbankan}
+      Cocok untuk: {kondisi ideal}
+      Estimasi: complexity={L/M/H}, performa={L/M/H}
+
+    STRATEGY C — {nama} (opsional)
+      ...
+
+  CONTOH NYATA:
+    Task: "Implementasi search endpoint untuk produk"
+
+    STRATEGY A — Full-Text Search (PostgreSQL)
+      Pendekatan: tsvector + GIN index di PostgreSQL
+      Trade-off: Terbatas pada satu database
+      Cocok untuk: < 1 juta record, stack PostgreSQL
+      Estimasi: complexity=LOW, performa=MEDIUM
+
+    STRATEGY B — Elasticsearch
+      Pendekatan: Sync data ke ES, query via ES API
+      Trade-off: Infrastruktur tambahan, eventual consistency
+      Cocok untuk: > 1 juta record, fuzzy search, facets
+      Estimasi: complexity=HIGH, performa=HIGH
+
+    STRATEGY C — In-Memory (Redis Search)
+      Pendekatan: Cache + Redis Search module
+      Trade-off: RAM intensive, data size terbatas
+      Cocok untuk: Dataset kecil, ultra-low latency
+      Estimasi: complexity=MEDIUM, performa=VERY HIGH
+
+----------------------------------------------------------------
+LANGKAH 3 — IMPLEMENTASI PARALEL (Competitive Coding)
+----------------------------------------------------------------
+
+  Agent mengimplementasikan setiap strategy sebagai BRANCH terpisah:
+
+  ATURAN:
+    - Setiap strategy diimplementasikan dengan kualitas yang SAMA
+      (tidak boleh sengaja membuat satu lebih buruk)
+    - Setiap strategy WAJIB memenuhi Engineering Supreme Law
+    - Setiap strategy HARUS bisa dijalankan dan ditest
+    - Kode ditempatkan di branch terpisah atau folder sementara
+
+  STRUKTUR:
+    scratch/optimize/
+    ├── strategy-a/      ← Implementasi Strategy A
+    │   ├── src/
+    │   └── test/
+    ├── strategy-b/      ← Implementasi Strategy B
+    │   ├── src/
+    │   └── test/
+    └── strategy-c/      ← (opsional)
+
+  JIKA CONTEXT WINDOW TERBATAS:
+    Agent boleh mengimplementasikan sebagai pseudo-code terstruktur
+    alih-alih kode penuh, TAPI harus cukup detail untuk di-score.
+
+----------------------------------------------------------------
+LANGKAH 4 — TEST + METRICS
+----------------------------------------------------------------
+
+  Setiap strategy diuji dengan metrik yang SAMA:
+
+  METRIK WAJIB:
+    1. CORRECTNESS (pass/fail):
+       - Semua unit test passing?
+       - Edge case tercakup?
+       - Happy path + error path benar?
+
+    2. PERFORMANCE (angka):
+       - Response time (ms)
+       - Memory usage (MB)
+       - Query count per operasi
+       - Throughput (req/sec) jika relevan
+
+    3. COMPLEXITY (angka):
+       - Jumlah baris kode
+       - Jumlah file yang dibutuhkan
+       - Jumlah dependency eksternal
+       - Cyclomatic complexity (estimasi)
+
+    4. MAINTAINABILITY (angka 1-10):
+       - Readability (bisa dipahami developer baru?)
+       - Testability (mudah ditulis unit test?)
+       - Extensibility (mudah ditambah fitur?)
+       - Dokumentasi (self-documenting?)
+
+    5. ALIGNMENT (angka 1-10):
+       - Sesuai Engineering Supreme Law?
+       - Sesuai arsitektur existing?
+       - Sesuai tech stack proyek?
+
+----------------------------------------------------------------
+LANGKAH 5 — SCORING ENGINE
+----------------------------------------------------------------
+
+  Setiap strategy dihitung skor total:
+
+  FORMULA:
+    score = (correctness * 30)
+          + (performance * 25)
+          + (maintainability * 25)
+          + (alignment * 15)
+          + (simplicity_bonus * 5)
+
+  BOBOT BISA DIKUSTOMISASI:
+    Jika proyek prioritas performa → naikkan bobot performance
+    Jika proyek prioritas maintenance → naikkan bobot maintainability
+    Default: seimbang seperti di atas
+
+  SIMPLICITY BONUS:
+    Strategy dengan kode paling sedikit mendapat +5 poin
+    (mendorong solusi sederhana sesuai prinsip KISS)
+
+  OUTPUT — Optimization Scorecard:
+    ┌──────────────────────────────────────────────────┐
+    │          OPTIMIZATION SCORECARD                  │
+    ├──────────┬────────┬────────┬────────┬───────────┤
+    │ Metrik   │ Str-A  │ Str-B  │ Str-C  │ Bobot     │
+    ├──────────┼────────┼────────┼────────┼───────────┤
+    │ Correct  │ 10/10  │ 10/10  │ 10/10  │ 30%       │
+    │ Perform  │ 7/10   │ 9/10   │ 10/10  │ 25%       │
+    │ Maintain │ 9/10   │ 6/10   │ 7/10   │ 25%       │
+    │ Align    │ 9/10   │ 7/10   │ 5/10   │ 15%       │
+    │ Simple   │ +5     │ +0     │ +3     │ 5%        │
+    ├──────────┼────────┼────────┼────────┼───────────┤
+    │ TOTAL    │ 87.0   │ 79.5   │ 78.0   │           │
+    └──────────┴────────┴────────┴────────┴───────────┘
+
+    PEMENANG: Strategy A — Full-Text Search (PostgreSQL)
+    ALASAN: Skor tertinggi karena maintainability dan alignment
+            lebih baik, meskipun performa sedikit di bawah Strategy C.
+
+----------------------------------------------------------------
+LANGKAH 6 — SELECT BEST + EXPLAIN WHY
+----------------------------------------------------------------
+
+  1. Pilih strategy dengan skor tertinggi
+  2. WAJIB jelaskan KENAPA strategy ini menang:
+     "Strategy A dipilih karena:
+      - Maintainability 9/10 (tidak butuh infra tambahan)
+      - Alignment 9/10 (sudah pakai PostgreSQL)
+      - Performance 7/10 (cukup untuk < 500k record)
+      Strategy B kalah karena complexity tinggi (perlu Elasticsearch)
+      Strategy C kalah karena alignment rendah (Redis belum di stack)"
+
+  3. Tanyakan user: "Saya merekomendasikan Strategy A.
+     Setuju, atau ada pertimbangan lain?"
+
+  4. Jika user setuju → terapkan kode Strategy A ke main branch
+  5. Jika user pilih strategy lain → terapkan pilihan user
+     → catat alasan user ke MemPalace (belajar preferensi)
+
+----------------------------------------------------------------
+LANGKAH 7 — GEP LEARN + EVOLVE
+----------------------------------------------------------------
+
+  Setelah strategy terpilih dan deployed:
+
+  CATAT KE GEP:
+    {
+      "type": "optimization_result",
+      "task": "{task_id}",
+      "strategies_evaluated": 3,
+      "winner": "strategy_a",
+      "winner_score": 87.0,
+      "reason": "maintainability + alignment",
+      "runner_up": "strategy_b",
+      "runner_up_score": 79.5,
+      "user_agreed": true,
+      "context": {
+        "project_size": "medium",
+        "tech_stack": "postgresql+nextjs",
+        "data_volume": "< 500k records"
+      }
+    }
+
+  UPDATE AUTO-RULES:
+    Jika pattern muncul >= 2 kali:
+    {
+      "rule_id": "OPT-001",
+      "trigger": "search_feature",
+      "condition": "data < 1M records AND stack = postgresql",
+      "injection": [
+        "PREFER PostgreSQL full-text search (tsvector)",
+        "SKIP Elasticsearch kecuali data > 1M records"
+      ],
+      "confidence": 0.85,
+      "source": "optimization_result 2x"
+    }
+
+  GENE EXTRACTION:
+    Jika pattern terbukti >= 3 kali di proyek berbeda:
+    → Ekstrak sebagai Gene permanen
+    → Gene ini otomatis menjadi rekomendasi default
+       untuk konteks serupa di masa depan
+
+================================================================
+KAPAN SELF-OPTIMIZING ENGINE AKTIF
+================================================================
+
+  ENGINE AKTIF JIKA:
+    - Task memiliki > 1 pendekatan valid (agent menilai)
+    - Effort task >= M (Medium)
+    - User tidak menentukan pendekatan spesifik
+
+  ENGINE TIDAK AKTIF JIKA:
+    - Task adalah CRUD sederhana
+    - User sudah menentukan "pakai cara X"
+    - Effort task = S (Small) — tidak worth it
+    - Bug fix dengan solusi jelas
+
+  SHORTCUT MODE:
+    Jika MemPalace sudah punya Gene untuk konteks yang sama:
+    → Skip multi-implementation
+    → Langsung pakai Gene yang proven
+    → Tampilkan: "Gene OPT-001 diterapkan (confidence 0.95).
+       Menggunakan PostgreSQL FTS berdasarkan 3 pengalaman sebelumnya."
+
+================================================================
 INTEGRASI DENGAN EKOSISTEM IRONMAN
 ================================================================
 
   ENGINEERING_LAW.md    → Aturan BAGAIMANA kode ditulis
   PIPELINE.md           → Aturan KAPAN & APA yang dilakukan
   AUTONOMY.md (ini)     → Aturan MENGAPA & sistem BERPIKIR MANDIRI
+    System 1: Self-Planning     → Proaktif deteksi & saran
+    System 2: Arch Evolution    → Evolusi arsitektur otomatis
+    System 3: GEP MAX           → Belajar dari kegagalan
+    System 4: Autonomous Loop   → Siklus IDE→BUILD→MONITOR→LEARN
+    System 5: Self-Optimizing   → Kompetisi multi-strategy
   skills/prd-agent/     → PRD sebagai living system
   MemPalace             → Long-term memory untuk semua sistem
   GEP events.jsonl      → Sumber data pembelajaran
@@ -354,9 +626,16 @@ INTEGRASI DENGAN EKOSISTEM IRONMAN
 HIERARKI KEPUTUSAN:
   1. Engineering Supreme Law (tidak bisa di-override oleh siapapun)
   2. User decision (selalu diutamakan di atas saran agent)
-  3. Autonomy Engine suggestions (proaktif tapi bukan final)
-  4. Auto-rules dari GEP (diterapkan kecuali user override)
+  3. Self-Optimizing Engine (data-driven recommendation)
+  4. Autonomy Engine suggestions (proaktif tapi bukan final)
+  5. Auto-rules dari GEP (diterapkan kecuali user override)
+
+FULL FLOW — SELF-OPTIMIZING SYSTEM:
+  PRD → STRATEGY GENERATOR → MULTIPLE IMPLEMENTATION
+    → TEST + METRICS → SCORING → SELECT BEST
+    → DEPLOY → GEP LEARN → UPDATE RULE → (loop)
 
 ================================================================
-END OF IRONMAN AUTONOMY ENGINE v1.0
+END OF IRONMAN AUTONOMY ENGINE v2.0
 ================================================================
+

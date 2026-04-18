@@ -27,9 +27,10 @@ version: "6.1.0"
 > `User Idea → PRD Agent → UX/Flow Agent → Task Breakdown → Ironman Dev → QA → Security & Deploy`
 > Setiap fase menghasilkan artefak wajib. Dilarang loncat fase.
 >
-> 🧠 **AUTONOMY ENGINE v1.0 — SELF-THINKING AI PARTNER**
-> Ironman berpikir mandiri via `AUTONOMY.md`:
-> Self-Planning | Architecture Evolution | Failure-Driven Dev (GEP MAX) | Autonomous Product Loop
+> 🧠 **AUTONOMY ENGINE v2.0 — SELF-OPTIMIZING AI PARTNER**
+> Ironman berpikir & mengoptimasi mandiri via `AUTONOMY.md`:
+> Self-Planning | Architecture Evolution | GEP MAX | Autonomous Loop | **Self-Optimizing Engine**
+> Flow: `GENERATE → MULTI-STRATEGY → TEST → SCORE → SELECT → LEARN → EVOLVE`
 > Prinsip utama: **Long-term maintainability > Short-term fix**
 >
 > 🇮🇩 **BAHASA PRIORITAS: INDONESIA**

@@ -212,8 +212,9 @@ FASE 6 — Security & Deploy → Menghasilkan: deploy-report.md
 │                   MEMORY & CONTEXT LAYER                         │
 │    MemPalace MCP (Long-term Memory) | GEP Genes (Reusable)      │
 ├─────────────────────────────────────────────────────────────────┤
-│                   AUTONOMY ENGINE v1.0                            │
+│                   AUTONOMY ENGINE v2.0                            │
 │  Self-Planning | Arch Evolution | GEP MAX | Autonomous Loop     │
+│  ★ Self-Optimizing: GENERATE → MULTI-STRATEGY → SCORE → SELECT  │
 │  ★ Long-term Maintainability > Short-term Fix                    │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -255,7 +256,7 @@ ironman/
 | **Evolver (GEP)** | Self-evolution engine: belajar dari kegagalan | ✅ |
 | **Product Pipeline** | 6 fase lifecycle: Idea → PRD → UX → Tasks → Dev → Deploy | ✅ |
 | **PRD Agent v2.0** | AI-First Dynamic PRD: 7 modul, living document, auto-validate | ✅ |
-| **Autonomy Engine** | Self-Planning, Arch Evolution, GEP MAX, Autonomous Loop | ✅ |
+| **Autonomy Engine v2.0** | 5 sistem: Self-Planning, Arch Evolution, GEP MAX, Auto Loop, **Self-Optimizing** | ✅ |
 | **Prompt Master** | HTML tool untuk generate prompt High-Agency | Manual |
 
 ---
