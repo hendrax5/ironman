@@ -591,6 +591,7 @@ DILARANG KERAS:
   [ ] Scroll horizontal — baris melebihi 120 karakter
   [ ] Mulai coding sebelum implementation_plan.md dibuat dan disetujui
   [ ] Nama variabel/fungsi yang ambigu (data, info, temp, x, obj)
+  [ ] Menyelesaikan task/perubahan tanpa memperbarui VERSION.md dan CHANGELOG.md secara manual/otomatis
 
 JIKA PELANGGARAN TERDETEKSI:
 → STOP SEKETIKA
@@ -642,6 +643,8 @@ Verifikasi SEMUA checklist ini sebelum menyelesaikan task apapun:
   [ ] implementation_plan.md ada dan sesuai dengan apa yang dibangun
   [ ] Komentar dan doc string dalam Bahasa Indonesia
   [ ] Kegagalan selama proses dicatat di assets/gep/events.jsonl
+  [ ] VERSION.md diperbarui dengan versi terbaru aplikasi
+  [ ] CHANGELOG.md diperbarui dengan detail commit/perubahan sesi ini
 
 JIKA SATU PUN GAGAL:
 → TOLAK DAN PERBAIKI. Jangan submit sampai semua passed.

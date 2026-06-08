@@ -63,6 +63,7 @@ version: "6.2.0"
 | 20 | 🗄️ **Cache Strategy** | TTL matrix, namespace convention, cache patterns, invalidation, multi-layer |
 | 21 | 🔄 **Schema Migration** | Naming convention, immutability, zero-downtime, expand-contract, Alembic/Prisma |
 | 22 | 🛡️ **Network Ops Rules** | RTBH safety, DDoS escalation, correlation enforcement, IBN compilation rules |
+| 23 | 📄 **Versioning & Changelog** | Wajib membuat/meng-update VERSION.md dan CHANGELOG.md di akhir setiap sesi |
 
 | Kata kunci | Domain aktif |
 |---|---|
@@ -85,6 +86,7 @@ version: "6.2.0"
 | `cache`, `redis`, `ttl`, `invalidation`, `cache-aside`, `write-through`, `stampede` | Cache Strategy |
 | `migration`, `schema migration`, `alembic`, `prisma migrate`, `flyway`, `alter table`, `down()` | Schema Migration |
 | `rtbh safety`, `ddos escalation`, `correlation rules`, `ibn rules`, `network ops` | Network Ops Rules |
+| `version`, `changelog`, `release`, `versi`, `log perubahan`, `tag` | 📄 Versioning & Changelog |
 
 ---
 
@@ -1309,6 +1311,42 @@ jobs:
 ❌ Jangan deploy model tanpa validation metrics
 ❌ Jangan serve tanpa health check dan error handling
 ```
+
+---
+
+### 📄 Versioning & Changelog
+> Aktif saat menyelesaikan task/perubahan kode, wajib mencatat progress dan menaikkan versi aplikasi secara eksplisit.
+
+#### 1. Format Wajib VERSION.md
+Setiap perubahan versi harus ditulis dalam format:
+```markdown
+# Application Version
+
+## Current Version: x.y.z
+- Last Updated: YYYY-MM-DD
+- Status: Stable / Development
+- Author: AI Agent (Antigravity)
+```
+
+#### 2. Format Wajib CHANGELOG.md
+Setiap log perubahan harus didokumentasikan di bawah judul versi yang sesuai:
+```markdown
+# Changelog
+
+## [x.y.z] - YYYY-MM-DD
+### Added
+- Fitur baru yang ditambahkan pada sesi ini.
+### Changed
+- Perubahan pada fungsionalitas yang sudah ada.
+### Fixed
+- Perbaikan bug atau penyesuaian kode.
+```
+
+#### Aturan Rilis & Versi:
+- ✅ Setiap sesi penyelesaian task WAJIB memperbarui VERSION.md dan CHANGELOG.md sebelum commit.
+- ✅ Gunakan Semantic Versioning (SemVer) untuk pembaruan versi (Major, Minor, Patch).
+- ✅ Deskripsi changelog harus ditulis dalam Bahasa Indonesia yang formal dan teknis.
+- ❌ Dilarang melakukan git push sebelum kedua dokumen ini sinkron dengan versi terbaru.
 
 ---
 
